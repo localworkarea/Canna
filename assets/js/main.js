@@ -1,5 +1,5 @@
 
-// БЛОКИРОВКА ПРОКРУТКИ И СКАЧОК ====================================================================================================================================================================================================================================================================================
+// БЛОКИРОВКА ПРОКРУТКИ И СКАЧОК ================================
  let bodyLockStatus = true;
  let bodyLockToggle = (delay = 500) => {
 	if (document.documentElement.classList.contains('lock')) {
@@ -32,9 +32,9 @@
 		let lock_padding = document.querySelectorAll("[data-lp]");
 		for (let index = 0; index < lock_padding.length; index++) {
 			const el = lock_padding[index];
-			el.style.paddingRight = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+			// el.style.paddingRight = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
 		}
-		body.style.paddingRight = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+		// body.style.paddingRight = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
 		document.documentElement.classList.add("lock");
 
 		bodyLockStatus = false;
@@ -45,26 +45,26 @@
 }
 
 
-// БУРГЕР =======================================================================================================================================================================================================================
+// OPEN MENU ===============================================
 function menuInit() {
 	if (document.querySelector(".icon-menu")) {
 		document.addEventListener("click", function (e) {
 			if (bodyLockStatus && e.target.closest('.icon-menu')) {
 				bodyLockToggle();
-				document.documentElement.classList.toggle("menu-open");
+				document.documentElement.classList.toggle("side-open");
 			}
 		});
 	};
 }
 function menuOpen() {
 	bodyLock();
-	document.documentElement.classList.add("menu-open");
+	document.documentElement.classList.add("side-open");
 }
 function menuClose() {
 	bodyUnlock();
-	document.documentElement.classList.remove("menu-open");
+	document.documentElement.classList.remove("side-open");
 }
-
+menuInit();
 
 
 
@@ -213,3 +213,32 @@ function menuClose() {
   }
 }
 tabs();
+
+ // == CLONE MENU-CART ==========
+ const menuCart = document.querySelector(".header__cart");
+ const cartClone = menuCart.cloneNode(true);
+ const sideCart = document.querySelector(".menu__cart-clone");
+ sideCart.append(cartClone);
+
+
+
+//  if (document.querySelector(".filters__slider .swiper")) {
+//   new Swiper (".filters__slider .swiper", {
+//     // slidesPerView: 'auto',
+//     slidesPerView: 10,
+//     spaceBetween: 24,
+//     speed: 400,
+//     loop: true,
+    
+//   // Navigation arrows
+//   navigation: {
+//     nextEl: '.filters__slider .swiper-button-next',
+//     prevEl: '.filters__slider .swiper-button-prev',
+//   },
+
+//   // And if we need scrollbar
+//   scrollbar: {
+//     el: '.filters__slider .swiper-scrollbar',
+//   },
+//   });
+// }

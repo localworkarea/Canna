@@ -36,30 +36,278 @@
 
 <body>
 <div class="main-wrapper">
-  <!-- left-side -------------------------------->
+  <!-- Main page -------------------------------->
   <div class="wrapper left-wrapper">
     <header class="header">
       <div class="header__container">
-        
+        <div class="header__search">
+          <form action="#" class="search-form__item">
+            <input autocomplete="off" type="text" name="form[]" placeholder="Поиск" class="search-form__input">
+            <button type="submit" class="search-form__btn">
+              <img class="search-form__icon" src="assets/img/icons/Search.svg" alt="cart">
+            </button>
+          </form>
+        </div>
+        <div class="header__wrap">
+          <div class="header__cart">
+            <div class="header__cart-title">Корзина</div>
+            <a href="#" class="header__cart-icon">
+              <img class="header__icon" src="assets/img/icons/cart.svg" alt="cart">
+              <div class="header__cart-count"><span>5</span></div>
+            </a>
+          </div>
+          <div class="header__menu menu">
+            <div class="menu__title">МЕНЮ</div>
+            <button type="button" class="menu__icon icon-menu">
+              <img class="menu__icon-icon" src="assets/img/icons/Menu.svg" alt="cart">
+            </button>
+          </div>
+        </div>
       </div>
     </header>
     <main class="main">
-      First
+      <section class="head">
+        <div class="head__container">
+          <div class="head__info">
+            <div class="head__info-wrap">
+              <div class="head__logo">
+                <img class="head__logo-img" src="assets/img/logo.svg" alt="logo">
+              </div>
+              <h1 class="head__title">Натуральная косметика из конопли</h1>
+              <h2 class="head__subtitle">Натуральная косметика с органическими маслами семян конопли увлажняет, заживляет и регенерирует кожу.</h2>
+              <div class="head__icons">
+                <a href="#" class="head__icon">
+                  <img class="head__icon-img" src="assets/img/icons/Instagram.svg" alt="icon">
+                </a>
+                <a href="#" class="head__icon">
+                  <img class="head__icon-img" src="assets/img/icons/VK.svg" alt="icon">
+                </a>
+                <a href="#" class="head__icon">
+                  <img class="head__icon-img" src="assets/img/icons/Telegram.svg" alt="icon">
+                </a>
+                <a href="#" class="head__icon">
+                  <img class="head__icon-img" src="assets/img/icons/What’sApp.svg" alt="icon">
+                </a>
+                <a href="#" class="head__icon">
+                  <img class="head__icon-img" src="assets/img/icons/Facebook.svg" alt="icon">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="head__image">
+            <img class="head__image-img" src="assets/img/main.jpg" alt="head">
+          </div>
+        </div>
+      </section>
+      <section class="filters">
+        <div class="filters__container">
+          <ul class="filters__list">
+            <li class="filters__item"><a href="#" class="filters__link _active">Парфюмерия</a></li>
+            <li class="filters__item"><a href="#" class="filters__link">Для волос</a></li>
+            <li class="filters__item"><a href="#" class="filters__link">Уход для лица</a></li>
+            <li class="filters__item"><a href="#" class="filters__link">Уход для лица</a></li>
+            <li class="filters__item"><a href="#" class="filters__link">Уход для лица</a></li>
+            <li class="filters__item"><a href="#" class="filters__link">Уход для лица</a></li>
+            <li class="filters__item"><a href="#" class="filters__link">Уход для лица</a></li>
+            <li class="filters__item"><a href="#" class="filters__link">Уход для лица</a></li>
+            <li class="filters__item"><a href="#" class="filters__link">Уход для лица</a></li>
+            <li class="filters__item"><a href="#" class="filters__link">Уход для лица</a></li>
+            <li class="filters__item"><a href="#" class="filters__link">Уход для лица</a></li>
+            <li class="filters__item"><a href="#" class="filters__link">Уход для лица</a></li>
+            <li class="filters__item"><a href="#" class="filters__link">Уход для лица</a></li>
+          </ul>
+          <!-- <div class="filters__slider swiper">
+            <div class="filters__wrapper swiper-wrapper">
+              <div class="filters__slide swiper-slide">
+                <a href="#" class="filters__link _active">Парфюмерия</a>
+              </div>
+              <div class="filters__slide swiper-slide">
+                <a href="#" class="filters__link">для волос</a>
+              </div>
+              <div class="filters__slide swiper-slide">
+                <a href="#" class="filters__link">Уход для лица</a>
+              </div>
+              <div class="filters__slide swiper-slide">
+                <a href="#" class="filters__link">Уход для лица</a>
+              </div>
+              <div class="filters__slide swiper-slide">
+                <a href="#" class="filters__link">Уход для лица</a>
+              </div>
+              <div class="filters__slide swiper-slide">
+                <a href="#" class="filters__link">Уход для лица</a>
+              </div>
+              <div class="filters__slide swiper-slide">
+                <a href="#" class="filters__link">Уход для лица</a>
+              </div>
+            </div>
+            <button type="button" class="swiper-button-prev"></button>
+            <button type="button" class="swiper-button-next"></button>
+          </div> -->
+          <div class="filters__filters">
+              <div class="filters__price-filters">
+                <button class="btn-price-filters">
+                  <div class="filters__image">
+                    <img class="filters__image-sort" src="assets/img/icons/sort-2.svg" alt="arrow">
+                    <img class="filters__image-sort-rev" src="assets/img/icons/sort-2.svg" alt="arrow">
+                  </div>
+                  <div class="filters__btn-title">По цене</div>
+                </button>
+              </div>
+              <div class="filters__all-filters">
+                <button class="btn-all-filters">
+                  <div class="filters__image">
+                    <img class="filters__image-filter" src="assets/img/icons/Filter.svg" alt="arrow">
+                  </div>
+                  <div class="filters__btn-title">Фильтры</div>
+                </button>
+                <div class="filters__btn-count">
+                  <span>2</span>
+                </div>
+              </div> 
+          </div>
+        </div>
+      </section>
+      <section class="products">
+        <div class="products__container">
+          <article class="product">
+            <div class="product__image">
+              <img class="product__img" src="assets/img/products/1.png" alt="product">
+            </div>
+            <div class="product__body">
+              <div class="product__type">ПАРФЮМЕРНАЯ ВОДА</div>
+              <div class="product__name">PAYOT bougie harmonisante</div>
+              <div class="product__price">
+                <div class="product__price-new">890 ₽</div>
+                <div class="product__price-old">1500 ₽</div>
+              </div>
+            </div>
+          </article>
+          <article class="product">
+            <div class="product__image">
+              <img class="product__img" src="assets/img/products/2.png" alt="product">
+            </div>
+            <div class="product__body">
+              <div class="product__type">ПАРФЮМЕРНАЯ ВОДА</div>
+              <div class="product__name">PAYOT bougie harmonisante</div>
+              <div class="product__price">
+                <div class="product__price-new">890 ₽</div>
+                <div class="product__price-old">1500 ₽</div>
+              </div>
+            </div>
+          </article>
+          <article class="product">
+            <div class="product__image">
+              <img class="product__img" src="assets/img/products/3.png" alt="product">
+            </div>
+            <div class="product__body">
+              <div class="product__type">ПАРФЮМЕРНАЯ ВОДА</div>
+              <div class="product__name">PAYOT bougie harmonisante</div>
+              <div class="product__price">
+                <div class="product__price-new">890 ₽</div>
+                <div class="product__price-old">1500 ₽</div>
+              </div>
+            </div>
+          </article>
+          <article class="product">
+            <div class="product__image">
+              <img class="product__img" src="assets/img/products/4.png" alt="product">
+            </div>
+            <div class="product__body">
+              <div class="product__type">ПАРФЮМЕРНАЯ ВОДА</div>
+              <div class="product__name">PAYOT bougie harmonisante</div>
+              <div class="product__price">
+                <div class="product__price-new">890 ₽</div>
+                <div class="product__price-old">1500 ₽</div>
+              </div>
+            </div>
+          </article>
+          <article class="product">
+            <div class="product__image">
+              <img class="product__img" src="assets/img/products/5.png" alt="product">
+            </div>
+            <div class="product__body">
+              <div class="product__type">ПАРФЮМЕРНАЯ ВОДА</div>
+              <div class="product__name">PAYOT bougie harmonisante</div>
+              <div class="product__price">
+                <div class="product__price-new">890 ₽</div>
+                <div class="product__price-old">1500 ₽</div>
+              </div>
+            </div>
+          </article>
+          <article class="product">
+            <div class="product__image">
+              <img class="product__img" src="assets/img/products/6.png" alt="product">
+            </div>
+            <div class="product__body">
+              <div class="product__type">ПАРФЮМЕРНАЯ ВОДА</div>
+              <div class="product__name">PAYOT bougie harmonisante</div>
+              <div class="product__price">
+                <div class="product__price-new">890 ₽</div>
+                <div class="product__price-old">1500 ₽</div>
+              </div>
+            </div>
+          </article>
+          <article class="product">
+            <div class="product__image">
+              <img class="product__img" src="assets/img/products/2.png" alt="product">
+            </div>
+            <div class="product__body">
+              <div class="product__type">ПАРФЮМЕРНАЯ ВОДА</div>
+              <div class="product__name">PAYOT bougie harmonisante</div>
+              <div class="product__price">
+                <div class="product__price-new">890 ₽</div>
+                <div class="product__price-old">1500 ₽</div>
+              </div>
+            </div>
+          </article>
+          <article class="product">
+            <div class="product__image">
+              <img class="product__img" src="assets/img/products/5.png" alt="product">
+            </div>
+            <div class="product__body">
+              <div class="product__type">ПАРФЮМЕРНАЯ ВОДА</div>
+              <div class="product__name">PAYOT bougie harmonisante</div>
+              <div class="product__price">
+                <div class="product__price-new">890 ₽</div>
+                <div class="product__price-old">1500 ₽</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
     </main>
-    <footer class="footer"></footer>
   </div>
   
-  <!-- right-side -------------------------------->
-  <div class="wrapper right-wrapper">
-    <aside class="sidebar">
-      Second
-    </aside>
-  </div>
+  <!-- Side -------------------------------->
+    <div class="side">
+      <div class="side__menu">
+        <div class="side__nav">
+          <div class="side__icons">
+            <img class="side__close-icon" src="assets/img/icons/Close.svg" alt="cart">
+            <img class="side__back-icon" src="assets/img/icons/arrow.svg" alt="cart">
+          </div>
+          <div class="menu__cart-clone"></div>
+        </div>
+        <nav class="menu__body">
+          <ul class="menu__list">
+            <li class="menu__item"><a href="" class="menu__link">Главная</a></li>
+            <li class="menu__item"><a href="" class="menu__link">Контакты</a></li>
+            <li class="menu__item"><a href="" class="menu__link">О нас</a></li>
+          </ul>
+          <ul class="menu__list-btm">
+            <li class="menu__item-btm"><a href="" class="menu__link-btm">Пользовательское соглашение</a></li>
+            <li class="menu__item-btm"><a href="" class="menu__link-btm">Доставка и оплата</a></li>
+            <li class="menu__item-btm"><a href="" class="menu__link-btm">Обмен и возврат </a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
 </div>
   <!-- Scripts -->
   <script src="assets/js/libs.min.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/swiper.js"></script>
+  <swiper (beforeTransitionStart)="onBeforeTransition($event)" ...></swiper>
 </body>
 
 </html>
