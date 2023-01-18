@@ -56,6 +56,26 @@ function menuInit() {
 		});
 	};
 }
+// function menuInit() {
+// 	if (document.querySelector(".icon-menu") || document.querySelector(".side__icons")) {
+// 		document.addEventListener("click", function (e) {
+// 			if (bodyLockStatus && e.target.closest('.icon-menu') || document.querySelector(".side__icons")) {
+// 				bodyLockToggle();
+// 				document.documentElement.classList.toggle("side-open");
+// 			}
+// 		});
+// 	};
+// }
+function menuInitSec() {
+	if (document.querySelector(".side__icons")) {
+		document.addEventListener("click", function (e) {
+			if (bodyLockStatus && e.target.closest('.side__icons')) {
+				bodyLockToggle();
+				document.documentElement.classList.toggle("side-open");
+			}
+		});
+	};
+}
 function menuOpen() {
 	bodyLock();
 	document.documentElement.classList.add("side-open");
@@ -65,6 +85,7 @@ function menuClose() {
 	document.documentElement.classList.remove("side-open");
 }
 menuInit();
+menuInitSec();
 
 
 

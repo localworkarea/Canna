@@ -52,6 +52,7 @@
       font-size: 14px;
       line-height: 1.29;
       text-transform: uppercase;
+      max-width: fit-content;
 		}
 		// .header__cart-icon
 		&__cart-icon {
@@ -144,21 +145,37 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
+      row-gap: 42px;
 		}
 		// .menu__item
 		&__item {
 		}
 		// .menu__link
 		&__link {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: calc(24/16);
+      text-transform: uppercase;
 		}
 		// .menu__list-btm
 		&__list-btm {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      row-gap: 24px;
 		}
 		// .menu__item-btm
 		&__item-btm {
 		}
 		// .menu__link-btm
 		&__link-btm {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: calc(16/12);
+      text-decoration-line: underline;
+      color: $grayDark;
 		}
 }
 
@@ -170,6 +187,7 @@
   transition: all .2s linear;
   min-height: 100%;
   max-width: 0%;
+  
 
   background-color: $grayLight;
   filter: drop-shadow(-1px 0px 0px #A2A2A2);
@@ -186,19 +204,28 @@
       display: flex;
       flex-direction: column;
       min-height: 100%;
-      
+      // height: 100vh;
+      @include adaptiveValue("width", 407, 320);
+
+      padding: 16px 32px 24px;
 		}
 		// .side__nav
 		&__nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 		}
 		// .side__icons
 		&__icons {
+      
 		}
 		// .side__close-icon
 		&__close-icon {
+      margin-left: 2px;
 		}
 		// .side__back-icon
 		&__back-icon {
+      display: none;
 		}
 }
 
@@ -209,6 +236,7 @@
     display: flex;
     align-items: center;
     @include adaptiveValue("padding-top", 40, 62);
+    // padding-top: 40px;
   }
   // .head__info
   &__info {
@@ -227,6 +255,7 @@
     width: 64px;
     height: 64px;
     @include adaptiveValue("margin-bottom", 32, 16);
+    // margin-bottom: 32px;
   }
   // .head__logo-img
   &__logo-img {
@@ -309,6 +338,7 @@
     column-gap: 24px;
     height: 49px;
     @include adaptiveValue("margin-top", 40, 24);
+    // margin-top: 40px;
     margin-bottom: 16px;
     // border-bottom: 2px solid $gray;
 
@@ -446,10 +476,34 @@
     grid-template-columns: repeat(4, auto);
     @include adaptiveValue("column-gap", 24, 8);
     @include adaptiveValue("row-gap", 48, 24);
+    // column-gap: 24px;
+    // row-gap: 48px;
+    @media (max-width: 1050px) {
+      grid-template-columns: repeat(3, auto);
+    }
+    
+    .side-open & {
+      @media (max-width: 1513px) {
+        @media (min-width: 1300px) {
+            grid-template-columns: repeat(3, auto);
+        }      
+      }
+      @media (max-width: 1299.98px) {
+        @media (min-width: 1000px) {
+            grid-template-columns: repeat(2, auto);
+        }      
+      }
+    }
+
+    // display: flex;
+    // flex-wrap: wrap;
   }
 }
 .product {
-  max-width: 297px;
+  // max-width: 297px;
+
+  // min-width: 200px;
+  // width: 100%;
   // .product__image
   &__image {
     border-radius: 8px;
@@ -470,21 +524,69 @@
   }
   // .product__body
   &__body {
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
   }
   // .product__type
   &__type {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: calc(16/12);
+    text-transform: uppercase;
+    @include adaptiveValue("margin-bottom", 9, 4);
+    @include tablet {
+      @include adaptiveValue("font-size", 12, 10);
+    }
+    @include mobile {
+      line-height: calc(16/10);
+    }
   }
   // .product__name
   &__name {
+    flex: 1 1 auto;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: calc(16/18);
+    @include adaptiveValue("margin-bottom", 24, 16);
+    @include tablet {
+      @include adaptiveValue("font-size", 18, 12);
+    }
+    @include mobile {
+      line-height: calc(16/12);
+    }
   }
   // .product__price
   &__price {
+    display: flex;
+    gap: 8px;
   }
   // .product__price-new
   &__price-new {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: calc(20/18);
+    color: $purple;
+    @include tablet {
+      @include adaptiveValue("font-size", 18, 14);
+    }
+    @include mobile {
+      line-height: calc(20/14);
+    }
   }
   // .product__price-old
   &__price-old {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    text-decoration-line: line-through;
+    color: $grayDark;
+    @include tablet {
+      @include adaptiveValue("font-size", 18, 14);
+    }
+    @include mobile {
+      line-height: calc(20/14);
+    }
   }
 }
 

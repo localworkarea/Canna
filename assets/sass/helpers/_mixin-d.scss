@@ -99,7 +99,7 @@ $maxWidth: 1512;
 // Ширина ограничивающего контейнера (0 = ограничения нет)
 $maxWidthContainer: 1260;
 // Общий отступ у контейнера
-$containerPadding: 32;
+$containerPadding: 166;
 
 // Ширина срабатывания первого брейкпоинта
 $containerWidth: $maxWidthContainer + $containerPadding;
@@ -119,10 +119,13 @@ body {
 	// font-size: $fontSize;
 	// Скролл заблокированно
 	.lock & {
-		overflow: hidden;
+		overflow-x: hidden;
+		overflow-y: auto;
 		touch-action: none;
 		overscroll-behavior: none;
+		
 	}
+		
 	// Сайт загружен
 	.loaded & {
 	}
@@ -138,7 +141,11 @@ body {
 		}
 		@if ($containerPadding>0) {
 			@if ($maxWidthContainer>0) {
-				padding: 0 rem(math.div($containerPadding, 2));
+				// padding: 0 rem(math.div($containerPadding, 2));
+					padding-top: 0;
+					padding-bottom: 0;
+					@include adaptiveValue("padding-left", 83, 16);
+					@include adaptiveValue("padding-right", 83, 16);
 			} @else {
 				@include adaptiveValue("padding-left", math.div($containerPadding, 2), 15);
 				@include adaptiveValue("padding-right", math.div($containerPadding, 2), 15);
