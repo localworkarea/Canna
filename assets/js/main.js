@@ -13,11 +13,11 @@
 	if (bodyLockStatus) {
 		let lock_padding = document.querySelectorAll("[data-lp]");
 		setTimeout(() => {
-			for (let index = 0; index < lock_padding.length; index++) {
-				const el = lock_padding[index];
-				el.style.paddingRight = '0px';
-			}
-			body.style.paddingRight = '0px';
+			// for (let index = 0; index < lock_padding.length; index++) {
+			// 	const el = lock_padding[index];
+			// 	el.style.paddingRight = '0px';
+			// }
+			// body.style.paddingRight = '0px';
 			document.documentElement.classList.remove("lock");
 		}, delay);
 		bodyLockStatus = false;
@@ -29,12 +29,12 @@
  let bodyLock = (delay = 500) => {
 	let body = document.querySelector("body");
 	if (bodyLockStatus) {
-		let lock_padding = document.querySelectorAll("[data-lp]");
-		for (let index = 0; index < lock_padding.length; index++) {
-			const el = lock_padding[index];
-			el.style.paddingRight = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
-		}
-		body.style.paddingRight = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+		// let lock_padding = document.querySelectorAll("[data-lp]");
+		// for (let index = 0; index < lock_padding.length; index++) {
+		// 	const el = lock_padding[index];
+		// 	el.style.paddingRight = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+		// }
+		// body.style.paddingRight = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
 		document.documentElement.classList.add("lock");
 
 		bodyLockStatus = false;
@@ -51,41 +51,59 @@ function menuInit() {
 		document.addEventListener("click", function (e) {
 			if (bodyLockStatus && e.target.closest('.icon-menu')) {
 				bodyLockToggle();
+				document.documentElement.classList.toggle("menu-open");
 				document.documentElement.classList.toggle("side-open");
 			}
 		});
 	};
 }
-// function menuInit() {
-// 	if (document.querySelector(".icon-menu") || document.querySelector(".side__icons")) {
-// 		document.addEventListener("click", function (e) {
-// 			if (bodyLockStatus && e.target.closest('.icon-menu') || document.querySelector(".side__icons")) {
-// 				bodyLockToggle();
-// 				document.documentElement.classList.toggle("side-open");
-// 			}
-// 		});
-// 	};
-// }
-function menuInitSec() {
+menuInit();
+
+function aboutInit() {
+	if (document.querySelector(".menu-link-home")) {
+		document.addEventListener("click", function (e) {
+			if (bodyLockStatus && e.target.closest('.menu-link-home')) {
+				bodyLockToggle();
+				document.documentElement.classList.add("home-link-open");
+        document.documentElement.classList.remove("menu-open");
+			}
+		});
+	};
+}
+aboutInit();
+
+function filtersInit() {
+	if (document.querySelector(".btn-all-filters")) {
+		document.addEventListener("click", function (e) {
+			if (bodyLockStatus && e.target.closest('.btn-all-filters')) {
+				bodyLockToggle();
+				document.documentElement.classList.add("filters-all");
+        document.documentElement.classList.add("side-open");
+        document.documentElement.classList.remove("menu-open");
+        document.documentElement.classList.remove("home-link-open");
+			}
+		});
+	};
+}
+filtersInit();
+
+
+function sideClose() {
 	if (document.querySelector(".side__icons")) {
 		document.addEventListener("click", function (e) {
 			if (bodyLockStatus && e.target.closest('.side__icons')) {
 				bodyLockToggle();
-				document.documentElement.classList.toggle("side-open");
+        document.documentElement.classList.remove("menu-open");
+        document.documentElement.classList.remove("side-open");
+        document.documentElement.classList.remove("home-link-open");
+        document.documentElement.classList.remove("filters-all");
 			}
 		});
 	};
 }
-function menuOpen() {
-	bodyLock();
-	document.documentElement.classList.add("side-open");
-}
-function menuClose() {
-	bodyUnlock();
-	document.documentElement.classList.remove("side-open");
-}
-menuInit();
-menuInitSec();
+sideClose();
+
+
 
 
 
@@ -238,8 +256,10 @@ tabs();
  // == CLONE MENU-CART ==========
  const menuCart = document.querySelector(".header__cart");
  const cartClone = menuCart.cloneNode(true);
- const sideCart = document.querySelector(".menu__cart-clone");
- sideCart.append(cartClone);
+ const sideCart = document.querySelectorAll(".menu__cart-clone");
+ sideCart.forEach(el => {
+    el.append(cartClone);
+ });
 
 
 
