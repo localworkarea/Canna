@@ -30,6 +30,7 @@
   <!-- Styles CSS -->
   <link rel="stylesheet" href="assets/css/libs.css">
   <link rel="stylesheet" href="assets/css/style.css">
+
   <!-- Fonts and Icons-->
   <title>Главная</title>
 </head>
@@ -141,10 +142,32 @@
               <div class="filters__slide swiper-slide">
                 <a href="#" class="filters__link">Уход для лица</a>
               </div>
+              <div class="filters__slide swiper-slide">
+                <a href="#" class="filters__link">Уход для лица</a>
+              </div>
+              <div class="filters__slide swiper-slide">
+                <a href="#" class="filters__link">Уход для лица</a>
+              </div>
+              <div class="filters__slide swiper-slide">
+                <a href="#" class="filters__link">Уход для лица</a>
+              </div>
+              <div class="filters__slide swiper-slide">
+                <a href="#" class="filters__link">Уход для лица</a>
+              </div>
+              <div class="filters__slide swiper-slide">
+                <a href="#" class="filters__link">Уход для лица</a>
+              </div>
+              <div class="filters__slide swiper-slide">
+                <a href="#" class="filters__link">Уход для лица</a>
+              </div>
+              <div class="filters__slide swiper-slide">
+                <a href="#" class="filters__link">Уход для лица</a>
+              </div>
             </div>
-            <button type="button" class="swiper-button-prev"></button>
-            <button type="button" class="swiper-button-next"></button>
+             Если нужен скролбар
+             <div class="swiper-scrollbar"></div>
           </div> -->
+          
           <div class="filters__filters">
               <div class="filters__price-filters">
                 <button class="btn-price-filters">
@@ -283,14 +306,19 @@
   
   <!-- Side -------------------------------->
     <div class="side">
-
       <div class="side__menu">
         <div class="side__nav">
           <button class="side__icons">
             <img class="side__close-icon" src="assets/img/icons/Close.svg" alt="cart">
             <img class="side__back-icon" src="assets/img/icons/arrow.svg" alt="cart">
           </button>
-          <div class="menu__cart-clone"></div>
+          <div class="header__cart">
+            <div class="header__cart-title">Корзина</div>
+            <a href="#" class="header__cart-icon">
+              <img class="header__icon" src="assets/img/icons/cart.svg" alt="cart">
+              <div class="header__cart-count"><span>5</span></div>
+            </a>
+          </div>
         </div>
         <nav class="menu__body">
           <ul class="menu__list">
@@ -312,7 +340,13 @@
             <img class="side__close-icon" src="assets/img/icons/Close.svg" alt="cart">
             <img class="side__back-icon" src="assets/img/icons/arrow.svg" alt="cart">
           </button>
-          <div class="menu__cart-clone"></div>
+          <div class="header__cart">
+            <div class="header__cart-title">Корзина</div>
+            <a href="#" class="header__cart-icon">
+              <img class="header__icon" src="assets/img/icons/cart.svg" alt="cart">
+              <div class="header__cart-count"><span>5</span></div>
+            </a>
+          </div>
         </div>
         <div class="about__info-wrap">
           <div class="head__logo">
@@ -357,61 +391,223 @@
             <img class="side__close-icon" src="assets/img/icons/Close.svg" alt="cart">
             <img class="side__back-icon" src="assets/img/icons/arrow.svg" alt="cart">
           </button>
-          <div class="menu__cart-clone"></div>
-        </div>
-        <div class="filter-side__price">
-          <input autocomplete="off" type="text" value="" placeholder="0 ₽" name="form[]" class="filter-side__price-input">
-          <span class="filter-side__price-line"></span>
-          <input autocomplete="off" type="text" value="" placeholder="23000 ₽" name="form[]" class="filter-side__price-input">
-        </div>
-        <div class="filter-side__type">
-          <div class="filter-side__title title-mob">Бренд</div>
-          <div class="checkbox">
-            <input id="gucci" type="checkbox" name="brand" class="checkbox__input">
-            <label for="gucci" class="checkbox__label subtitle-mob">Гучи</label>
-          </div>
-          <div class="checkbox">
-            <input id="prada" type="checkbox" name="brand" class="checkbox__input">
-            <label for="prada" class="checkbox__label subtitle-mob">Прада</label>
-          </div>
-          <div class="checkbox">
-            <input id="louis" type="checkbox" name="brand" class="checkbox__input">
-            <label for="louis" class="checkbox__label subtitle-mob">Луи</label>
-          </div>
-          <div class="checkbox">
-            <input id="fendi" type="checkbox" name="brand" class="checkbox__input">
-            <label for="fendi" class="checkbox__label subtitle-mob">Фенди</label>
+          <div class="header__cart">
+            <div class="header__cart-title">Корзина</div>
+            <a href="#" class="header__cart-icon">
+              <img class="header__icon" src="assets/img/icons/cart.svg" alt="cart">
+              <div class="header__cart-count"><span>5</span></div>
+            </a>
           </div>
         </div>
-        <div class="filter-side__type">
-          <div class="filter-side__title title-mob">Категории</div>
-          <div class="checkbox">
-            <input id="parfum" type="checkbox" name="category" class="checkbox__input">
-            <label for="parfum" class="checkbox__label subtitle-mob">Парфюмерия</label>
+        <div class="filter-side__body">
+          <div class="filter-side__price">
+            <input autocomplete="off" type="text" value="" placeholder="0 ₽" name="form[]" class="filter-side__price-input">
+            <span class="filter-side__price-line"></span>
+            <input autocomplete="off" type="text" value="" placeholder="23000 ₽" name="form[]" class="filter-side__price-input">
           </div>
-          <div class="checkbox">
-            <input id="hair" type="checkbox" name="category" class="checkbox__input">
-            <label for="hair" class="checkbox__label subtitle-mob">Для волос</label>
+          <div class="filter-side__type">
+            <div class="filter-side__title title-mob">Бренд</div>
+            <div class="checkbox">
+              <input id="gucci" type="checkbox" name="brand" class="checkbox__input">
+              <label for="gucci" class="checkbox__label subtitle-mob"><span></span>Гучи</label>
+            </div>
+            <div class="checkbox">
+              <input id="prada" type="checkbox" name="brand" class="checkbox__input">
+              <label for="prada" class="checkbox__label subtitle-mob"><span></span>Прада</label>
+            </div>
+            <div class="checkbox">
+              <input id="louis" type="checkbox" name="brand" class="checkbox__input">
+              <label for="louis" class="checkbox__label subtitle-mob"><span></span>Луи</label>
+            </div>
+            <div class="checkbox">
+              <input id="fendi" type="checkbox" name="brand" class="checkbox__input">
+              <label for="fendi" class="checkbox__label subtitle-mob"><span></span>Фенди</label>
+            </div>
           </div>
-          <div class="checkbox">
-            <input id="face" type="checkbox" name="category" class="checkbox__input">
-            <label for="face" class="checkbox__label subtitle-mob">Уход для лица</label>
+          <div class="filter-side__type">
+            <div class="filter-side__title title-mob">Категории</div>
+            <div class="checkbox">
+              <input id="parfum" type="checkbox" name="category" class="checkbox__input">
+              <label for="parfum" class="checkbox__label subtitle-mob">Парфюмерия<span></span></label>
+            </div>
+            <div class="checkbox">
+              <input id="hair" type="checkbox" name="category" class="checkbox__input">
+              <label for="hair" class="checkbox__label subtitle-mob">Для волос<span></span></label>
+            </div>
+            <div class="checkbox">
+              <input id="face" type="checkbox" name="category" class="checkbox__input">
+              <label for="face" class="checkbox__label subtitle-mob">Уход для лица<span></span></label>
+            </div>
+            <div class="checkbox">
+              <input id="hygiene" type="checkbox" name="category" class="checkbox__input">
+              <label for="hygiene" class="checkbox__label subtitle-mob">Гигиена<span></span></label>
+            </div>
           </div>
-          <div class="checkbox">
-            <input id="hygiene" type="checkbox" name="category" class="checkbox__input">
-            <label for="hygiene" class="checkbox__label subtitle-mob">Гигиена</label>
-          </div>
+        </div>
+        <div class="filter-side__bottom">
+          <button class="filter-side__btn btn">ПРИМЕНИТЬ</и>
+          <button class="filter-side__btn btn_transparent">СБРОСИТЬ</button>
         </div>
       </div>
 
+      <div class="product-item">
+        <div class="side__nav">
+          <button class="side__icons">
+            <img class="side__close-icon" src="assets/img/icons/Close.svg" alt="cart">
+            <img class="side__back-icon" src="assets/img/icons/arrow.svg" alt="cart">
+          </button>
+          <div class="header__cart">
+            <div class="header__cart-title">Корзина</div>
+            <a href="#" class="header__cart-icon">
+              <img class="header__icon" src="assets/img/icons/cart.svg" alt="cart">
+              <div class="header__cart-count"><span>5</span></div>
+            </a>
+          </div>
+        </div>
+        <div class="product-item__slider slider-item">
+          <div class="product-item__slider swiper">
+            <div class="product-item__wrapper swiper-wrapper">
+              <div class="product-item__slide swiper-slide">
+                <div class="product-item__image">
+                  <img class="product-item__img" src="assets/img/products/4.png" alt="item">
+                </div>
+              </div>
+              <div class="product-item__slide swiper-slide">
+                <div class="product-item__image">
+                  <img class="product-item__img" src="assets/img/products/4.png" alt="item">
+                </div>
+              </div>
+              <div class="product-item__slide swiper-slide">
+                <div class="product-item__image">
+                  <img class="product-item__img" src="assets/img/products/4.png" alt="item">
+                </div>
+              </div>
+              <div class="product-item__slide swiper-slide">
+                <div class="product-item__image">
+                  <img class="product-item__img" src="assets/img/products/4.png" alt="item">
+                </div>
+              </div>
+            </div>
+            <button type="button" class="swiper-button-prev"></button>
+            <button type="button" class="swiper-button-next"></button>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="product-item__body">
+          <div class="product-item__title subtitle-mob">ПАРФЮМЕРНАЯ ВОДА</div>
+          <div class="product-item__subtitle title-mob">BON PARFUMEUR PARIS 602 – poivre, cèdre, patchouli</div>
+          <div class="product-item__options options">
+            <div class="options__item">
+              <input id="50ml" class="options__input" checked type="radio" value="50" name="option">
+              <label for="50ml" class="options__label"><span class="options__text title-mob ">50 МЛ</span></label>
+            </div>
+            <div class="options__item">
+              <input id="100ml" class="options__input" type="radio" value="100" name="option">
+              <label for="100ml" class="options__label"><span class="options__text title-mob ">100 МЛ</span></label>
+            </div>
+            <div class="options__item">
+              <input id="250ml" class="options__input" type="radio" value="250" name="option">
+              <label for="250ml" class="options__label"><span class="options__text title-mob ">250 МЛ</span></label>
+            </div>
+          </div>
+          <div class="product-item__about">
+            <p class="product-item__text subtitle-mob">Больше никаких морщинок! 🔥Платина и экстракт черной икры легко справятся с ними 👌🏻</p>
+            <p class="product-item__text subtitle-mob">Омолаживающий крем для век от Ottie мгновенно заполняет и разглаживает морщинки, осветляет темные круги под глазами, тонизирует и интенсивно увлажняет чувствительную кожу век 😍</p>
+            <p class="product-item__text subtitle-mob">Крем оснащен уникальным аппликатором-массажером с тремя роликовыми шариками 💥 С его помощью можно легко и гигиенично нанести средство на кожу, не растягивая и не травмируя ее 😉
+            </p>
+            <p class="product-item__text subtitle-mob">Массажер усиливает микроциркуляцию крови, расслабляет и дарит легкий охлаждающий эффект – благодаря этому активные компоненты проникают в глубокие слои эпидермиса</p>
+            <a href="https://canna.shop" class="product-item__link">https://canna.shop</a>
+          </div>
+        </div>
+        <div class="product-item__bottom">
+          <div class="product-item__price">
+            <div class="product-item__price-new">2990 ₽</div>
+            <div class="product-item__price-old">5500 ₽</div>
+          </div>
+          <button class="product-item__btn btn">ДОБАВИТЬ</button>
+        </div>
+      </div>
+
+      <div class="cart">
+        <div class="side__nav">
+          <button class="side__icons">
+            <img class="side__close-icon" src="assets/img/icons/Close.svg" alt="cart">
+            <img class="side__back-icon" src="assets/img/icons/arrow.svg" alt="cart">
+          </button>
+          <div class="header__cart">
+            <div class="header__cart-title">Корзина</div>
+          </div>
+        </div>
+        <div class="cart__product-item">
+          <div class="cart__item">
+            <div class="cart__image">
+              <img src="assets/img/products/2.png" alt="item" class="cart__img">
+            </div>
+            <div class="cart__info">
+              <div class="cart__item-title">ПАРФЮМЕРНАЯ ВОДА</div>
+              <div class="cart__item-subtitle">BON PARFUMEUR PARIS 602 – poivre, cèdre, patchouli</div>
+              <div class="form-cart__price">
+                <div class="form-cart__price-new">890 ₽</div>
+                <div class="form-cart__price-old">1500 ₽</div>
+              </div>
+            </div>
+            <div class="cart__icon">
+              <img src="assets/img/icons/Delete.svg" alt="delete" class="cart__icn">
+            </div>
+          </div>
+          <div class="cart__item">
+            <div class="cart__image">
+              <img src="assets/img/products/2.png" alt="item" class="cart__img">
+            </div>
+            <div class="cart__info">
+              <div class="cart__item-title">ПАРФЮМЕРНАЯ ВОДА</div>
+              <div class="cart__item-subtitle">BON PARFUMEUR PARIS 602 – poivre, cèdre, patchouli</div>
+              <div class="form-cart__price">
+                <div class="form-cart__price-new">890 ₽</div>
+                <div class="form-cart__price-old">1500 ₽</div>
+              </div>
+            </div>
+            <div class="cart__icon">
+              <img src="assets/img/icons/Delete.svg" alt="delete" class="cart__icn">
+            </div>
+          </div>
+        </div>
+        <button class="cart__btn-clear btn_transp-pure">очистить корзину</button>
+        <form action="#" class="cart__form form-cart">
+          <div class="form-cart__title title-mob">СПОСОБ ДОСТАВКИ</div>
+          <div class="form-cart__options">
+            <div class="form-cart__item">
+              <input id="self" class="form-cart__input" checked type="radio" value="1" name="option">
+              <label for="self" class="form-cart__label"><span class="form-cart__text subtitle-mob">Самовывоз</span></label>
+              <div class="form-cart__price">
+                <div class="form-cart__price-new">0 ₽</div>
+                <div class="form-cart__price-old"></div>
+              </div>
+            </div>
+            <div class="options__item">
+              <input id="courier" class="form-cart__input" type="radio" value="2" name="option">
+              <label for="courier" class="form-cart__label"><span class="form-cart__text subtitle-mob">Доставка курьером по Москве и МО</span></label>
+              <div class="form-cart__price">
+                <div class="form-cart__price-new">500 ₽</div>
+                <div class="form-cart__price-old">900 ₽</div>
+              </div>
+            </div>
+          </div>
+          <div class="form__item">
+						<label for="formName" class="form__label">Имя*:</label>
+						<input id="formName" type="text" name="name" class="form__input _req">
+					</div>
+        </form>
+      </div>
     </div>
+
+    
+    
 
 </div>
   <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="assets/js/libs.min.js"></script>
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/swiper.js"></script>
-  <swiper (beforeTransitionStart)="onBeforeTransition($event)" ...></swiper>
 </body>
-
 </html>
