@@ -1,13 +1,41 @@
+.main-wrapper {
+  display: flex;
+  min-height: 100%;
+	overflow: hidden;
+	@supports (overflow: clip) {
+		overflow: clip;
+	}
+	@include tablet {
+		position: relative;
+	}
+}
+.left-wrapper {
+  flex: 1 1 auto;
+	
+}
 .wrapper {
 	min-height: 100%;
-	display: flex;
-	flex-direction: column;
-	overflow: hidden;
+	display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+	@include tablet {
+		flex-direction: column-reverse;
+		&.not-found-page__second {
+			flex-direction: column;
+		}
+	}
 	@supports (overflow: clip) {
 		overflow: clip;
 	}
 	// Прижать footer
 	> main {
+		-webkit-box-flex: 1;
+		-ms-flex: 1 1 auto;
 		flex: 1 1 auto;
 	}
 	// фикс для слайдеров
@@ -15,23 +43,6 @@
 		min-width: 0;
 	}
 }
-
-// [class*="-ibg"] {
-// 	position: relative;
-// 	img {
-// 		position: absolute;
-// 		width: 100%;
-// 		height: auto;
-// 		top: 0;
-// 		left: 0;
-// 		object-fit: cover;
-// 	}
-// }
-// [class*="-ibg_contain"] {
-// 	img {
-// 		object-fit: contain;
-// 	}
-// }
 
 //<INPUT>
 // Сниппет (HTML): inp
@@ -43,29 +54,17 @@ textarea {
 	-moz-appearance: none;
 	appearance: none;
 }
-.input {
-	border-radius: 0 !important;
-	width: 100%;
-	display: block;
-	padding: 0px 20px;
-	border: 1px solid #eee;
-	&._form-focus {
-	}
-	&._form-error {
-	}
-}
-.input[placeholder]:not([data-placeholder-nohiden]) {
-	&::placeholder {
-		transition: opacity 0.3s;
-	}
-	&:focus::placeholder {
-		opacity: 0;
-	}
-}
 
-textarea.input {
-	resize: none;
-	padding: 0px 0px;
+.title-mob {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(24/16);
+}
+.subtitle-mob {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: calc(20/16);
 }
 
 // CHECKBOXES
@@ -101,6 +100,8 @@ textarea.input {
 	&__label {
 		cursor: pointer;
 		display: inline-flex;
+		display: -webkit-inline-box;
+  	display: -ms-inline-flexbox;
 		position: relative;
 		gap: 10px;
 		&:before {
@@ -149,58 +150,7 @@ textarea.input {
 	}
 }
 
-.title-mob {
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: calc(24/16);
-}
-.subtitle-mob {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: calc(20/16);
-}
 
-.options {
-	display: flex;
-	gap: 8px;
-	// .options__item
-	&__item {
-		position: relative;
-		cursor: pointer;
-		&:not(:last-child) {
-			margin-bottom: em(5);
-		}
-	}
-	// .options__input
-	&__input {
-		width: 0;
-		height: 0;
-		opacity: 0;
-		position: absolute;
-		&:focus + .options__label:before {
-			// box-shadow: 0 0 5px #000;
-		}
-		&:checked + .options__label {
-			.options__text {
-				color: $purple;
-			}
-		}
-	}
-	// .options__label
-	&__label {
-		display: inline-flex;
-		align-items: center;
-		cursor: pointer;
-		padding: 12px 16px;
-		border-radius: 16px;
-		background-color: $gray;
-	}
-	// .options__text
-	&__text {
-		color: $grayDark;
-	}
-}
 
 .btn {
 	border-radius: 16px;

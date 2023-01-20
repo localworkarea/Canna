@@ -119,55 +119,6 @@
             <li class="filters__item"><a href="#" class="filters__link">Уход для лица</a></li>
             <li class="filters__item"><a href="#" class="filters__link">Уход для лица</a></li>
           </ul>
-          <!-- <div class="filters__slider swiper">
-            <div class="filters__wrapper swiper-wrapper">
-              <div class="filters__slide swiper-slide">
-                <a href="#" class="filters__link _active">Парфюмерия</a>
-              </div>
-              <div class="filters__slide swiper-slide">
-                <a href="#" class="filters__link">для волос</a>
-              </div>
-              <div class="filters__slide swiper-slide">
-                <a href="#" class="filters__link">Уход для лица</a>
-              </div>
-              <div class="filters__slide swiper-slide">
-                <a href="#" class="filters__link">Уход для лица</a>
-              </div>
-              <div class="filters__slide swiper-slide">
-                <a href="#" class="filters__link">Уход для лица</a>
-              </div>
-              <div class="filters__slide swiper-slide">
-                <a href="#" class="filters__link">Уход для лица</a>
-              </div>
-              <div class="filters__slide swiper-slide">
-                <a href="#" class="filters__link">Уход для лица</a>
-              </div>
-              <div class="filters__slide swiper-slide">
-                <a href="#" class="filters__link">Уход для лица</a>
-              </div>
-              <div class="filters__slide swiper-slide">
-                <a href="#" class="filters__link">Уход для лица</a>
-              </div>
-              <div class="filters__slide swiper-slide">
-                <a href="#" class="filters__link">Уход для лица</a>
-              </div>
-              <div class="filters__slide swiper-slide">
-                <a href="#" class="filters__link">Уход для лица</a>
-              </div>
-              <div class="filters__slide swiper-slide">
-                <a href="#" class="filters__link">Уход для лица</a>
-              </div>
-              <div class="filters__slide swiper-slide">
-                <a href="#" class="filters__link">Уход для лица</a>
-              </div>
-              <div class="filters__slide swiper-slide">
-                <a href="#" class="filters__link">Уход для лица</a>
-              </div>
-            </div>
-             Если нужен скролбар
-             <div class="swiper-scrollbar"></div>
-          </div> -->
-          
           <div class="filters__filters">
               <div class="filters__price-filters">
                 <button class="btn-price-filters">
@@ -349,8 +300,8 @@
           </div>
         </div>
         <div class="about__info-wrap">
-          <div class="head__logo">
-            <img class="head__logo-img" src="assets/img/logo.svg" alt="logo">
+          <div class="about__logo">
+            <img class="about__logo-img" src="assets/img/logo.svg" alt="logo">
           </div>
           <h1 class="about__title title-mob">Натуральная косметика из конопли</h1>
           <h2 class="about__subtitle subtitle-mob">Натуральная косметика с органическими маслами семян конопли увлажняет, заживляет и регенерирует кожу.</h2>
@@ -496,18 +447,18 @@
         <div class="product-item__body">
           <div class="product-item__title subtitle-mob">ПАРФЮМЕРНАЯ ВОДА</div>
           <div class="product-item__subtitle title-mob">BON PARFUMEUR PARIS 602 – poivre, cèdre, patchouli</div>
-          <div class="product-item__options options">
-            <div class="options__item">
-              <input id="50ml" class="options__input" checked type="radio" value="50" name="option">
-              <label for="50ml" class="options__label"><span class="options__text title-mob ">50 МЛ</span></label>
+          <div class="product-item__options">
+            <div class="product-item__item">
+              <input id="50ml" class="product-item__input" checked type="radio" value="50" name="option">
+              <label for="50ml" class="product-item__label"><span class="product-item__text title-mob ">50 МЛ</span></label>
             </div>
-            <div class="options__item">
-              <input id="100ml" class="options__input" type="radio" value="100" name="option">
-              <label for="100ml" class="options__label"><span class="options__text title-mob ">100 МЛ</span></label>
+            <div class="product-item__item">
+              <input id="100ml" class="product-item__input" type="radio" value="100" name="option">
+              <label for="100ml" class="product-item__label"><span class="product-item__text title-mob ">100 МЛ</span></label>
             </div>
-            <div class="options__item">
-              <input id="250ml" class="options__input" type="radio" value="250" name="option">
-              <label for="250ml" class="options__label"><span class="options__text title-mob ">250 МЛ</span></label>
+            <div class="product-item__item">
+              <input id="250ml" class="product-item__input" type="radio" value="250" name="option">
+              <label for="250ml" class="product-item__label"><span class="product-item__text title-mob ">250 МЛ</span></label>
             </div>
           </div>
           <div class="product-item__about">
@@ -551,9 +502,9 @@
                 <div class="form-cart__price-old">1500 ₽</div>
               </div>
             </div>
-            <div class="cart__icon">
+            <button class="cart__icon-delete">
               <img src="assets/img/icons/Delete.svg" alt="delete" class="cart__icn">
-            </div>
+            </button>
           </div>
           <div class="cart__item">
             <div class="cart__image">
@@ -567,46 +518,67 @@
                 <div class="form-cart__price-old">1500 ₽</div>
               </div>
             </div>
-            <div class="cart__icon">
+            <button class="cart__icon-delete">
               <img src="assets/img/icons/Delete.svg" alt="delete" class="cart__icn">
-            </div>
+            </button>
           </div>
         </div>
         <button class="cart__btn-clear btn_transp-pure">очистить корзину</button>
         <form action="#" class="cart__form form-cart">
-          <div class="form-cart__title title-mob">СПОСОБ ДОСТАВКИ</div>
           <div class="form-cart__options">
-            <div class="form-cart__item">
-              <input id="self" class="form-cart__input" checked type="radio" value="1" name="option">
-              <label for="self" class="form-cart__label"><span class="form-cart__text subtitle-mob">Самовывоз</span></label>
+            <div class="form-cart__options-title title-mob">СПОСОБ ДОСТАВКИ</div>
+            <div class="form-cart__options-item">
+              <input id="self" class="form-cart__radio-input" type="radio" value="1" name="option">
+              <label for="self" class="form-cart__radio-label"><span class="form-cart__radio-text subtitle-mob">Самовывоз</span></label>
               <div class="form-cart__price">
                 <div class="form-cart__price-new">0 ₽</div>
                 <div class="form-cart__price-old"></div>
               </div>
             </div>
-            <div class="options__item">
-              <input id="courier" class="form-cart__input" type="radio" value="2" name="option">
-              <label for="courier" class="form-cart__label"><span class="form-cart__text subtitle-mob">Доставка курьером по Москве и МО</span></label>
+            <div class="form-cart__options-item">
+              <input id="courier" class="form-cart__radio-input" checked type="radio" value="2" name="option">
+              <label for="courier" class="form-cart__radio-label"><span class="form-cart__radio-text subtitle-mob">Доставка курьером по Москве и МО</span></label>
               <div class="form-cart__price">
                 <div class="form-cart__price-new">500 ₽</div>
                 <div class="form-cart__price-old">900 ₽</div>
               </div>
             </div>
           </div>
-          <div class="form__item">
-						<label for="formName" class="form__label">Имя*:</label>
-						<input id="formName" type="text" name="name" class="form__input _req">
+          <div class="form-cart__contact-item">
+						<label for="name" class="form-cart__contact-label title-mob">ФИО</label>
+						<input id="name" type="text" name="name" placeholder="Иванов Иван Иванович" class="form-cart__contact-input">
 					</div>
+          <div class="form-cart__contact-item">
+						<label for="address" class="form-cart__contact-label title-mob">Адрес</label>
+						<input id="address" type="text" name="address" placeholder="Город, улица, дом, квартира, индекс" class="form-cart__contact-input">
+					</div>
+          <div class="form-cart__contact-item">
+						<label for="tel" class="form-cart__contact-label title-mob">Номер телефона</label>
+						<input id="tel" type="tel" name="tel" placeholder="+7 (ххх) ххх хх хх" class="form-cart__contact-input tel-input">
+					</div>
+          <div class="form-cart__options">
+            <div class="form-cart__options-title title-mob">СПОСОБ ОПЛАТЫ</div>
+            <div class="form-cart__options-item">
+              <input id="cash" class="form-cart__radio-input" type="radio" value="1" name="payment">
+              <label for="cash" class="form-cart__radio-label"><span class="form-cart__radio-text subtitle-mob">Оплата в магазине</span></label>
+            </div>
+            <div class="form-cart__options-item">
+              <input id="online" class="form-cart__radio-input" checked type="radio" value="2" name="payment">
+              <label for="online" class="form-cart__radio-label"><span class="form-cart__radio-text subtitle-mob">Онлайн оплата</span></label>
+            </div>
+          </div>
+          <button class="form-cart__btn-submit btn">ОФОРМИТЬ ЗАКАЗ</button>
         </form>
+        <ul class="cart__btm">
+          <li class="cart__btm-item"><a href="#" class="menu__link-btm">Правила оплаты</a></li>
+          <li class="cart__btm-item"><a href="#" class="menu__link-btm">Условия возврата</a></li>
+        </ul>
       </div>
     </div>
 
-    
-    
-
 </div>
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> 
   <script src="assets/js/libs.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>

@@ -119,13 +119,12 @@ body {
 	// font-size: $fontSize;
 	// Скролл заблокированно
 	.lock & {
-		overflow-x: hidden;
-		overflow-y: auto;
-		touch-action: none;
-		overscroll-behavior: none;
-		
+		@media (max-width: 767px) {
+			overflow: hidden;
+			touch-action: none;
+			overscroll-behavior: none;
+		}
 	}
-		
 	// Сайт загружен
 	.loaded & {
 	}

@@ -1,92 +1,52 @@
+window.addEventListener("DOMContentLoaded", (event) => {
 
-// БЛОКИРОВКА ПРОКРУТКИ И СКАЧОК ================================
- let bodyLockStatus = true;
- let bodyLockToggle = (delay = 500) => {
-	if (document.documentElement.classList.contains('lock')) {
-		bodyUnlock(delay);
-	} else {
-		bodyLock(delay);
-	}
-}
- let bodyUnlock = (delay = 500) => {
-	let body = document.querySelector("body");
-	if (bodyLockStatus) {
-		let lock_padding = document.querySelectorAll("[data-lp]");
-		setTimeout(() => {
-			// for (let index = 0; index < lock_padding.length; index++) {
-			// 	const el = lock_padding[index];
-			// 	el.style.paddingRight = '0px';
-			// }
-			// body.style.paddingRight = '0px';
-			document.documentElement.classList.remove("lock");
-		}, delay);
-		bodyLockStatus = false;
-		setTimeout(function () {
-			bodyLockStatus = true;
-		}, delay);
-	}
-}
- let bodyLock = (delay = 500) => {
-	let body = document.querySelector("body");
-	if (bodyLockStatus) {
-		// let lock_padding = document.querySelectorAll("[data-lp]");
-		// for (let index = 0; index < lock_padding.length; index++) {
-		// 	const el = lock_padding[index];
-		// 	el.style.paddingRight = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
-		// }
-		// body.style.paddingRight = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
-		document.documentElement.classList.add("lock");
-
-		bodyLockStatus = false;
-		setTimeout(function () {
-			bodyLockStatus = true;
-		}, delay);
-	}
+// OPEN-CLOSE SIDE BLOCKS ===============================================
+function lockSideAdd() {
+  document.documentElement.classList.add("lock");
+  document.documentElement.classList.add("side-open");
 }
 
+const iconMenu = document.querySelector(".icon-menu");
+if (iconMenu) {
+	iconMenu.addEventListener("click", function (e) {
+		if (e.target.closest('.icon-menu')) {
+			lockSideAdd();
+			document.documentElement.classList.add("menu-open");
+			document.documentElement.classList.remove("contacts-open");
+      document.documentElement.classList.remove("filters-all");
+      document.documentElement.classList.remove("item-show");
+      document.documentElement.classList.remove("cart-open");
+		}
+	});
+};
 
-// OPEN MENU item-show ===============================================
-function menuInit() {
-	if (document.querySelector(".icon-menu")) {
-		document.addEventListener("click", function (e) {
-			if (bodyLockStatus && e.target.closest('.icon-menu')) {
-				bodyLockToggle();
-				document.documentElement.classList.toggle("menu-open");
-				document.documentElement.classList.toggle("side-open");
-			}
-		});
-	};
-}
-menuInit();
+const menuLinkContact = document.querySelector(".menu-link-contact");
+if (menuLinkContact) {
+	menuLinkContact.addEventListener("click", function (e) {
+		if (e.target.closest('.menu-link-contact')) {
+      lockSideAdd();
+			document.documentElement.classList.add("contacts-open");
+      document.documentElement.classList.remove("menu-open");
+			document.documentElement.classList.remove("cart-open");
+			document.documentElement.classList.remove("item-show");
+      document.documentElement.classList.remove("filters-all");
+		}
+	});
+};
 
-function aboutInit() {
-	if (document.querySelector(".menu-link-home")) {
-		document.addEventListener("click", function (e) {
-			if (bodyLockStatus && e.target.closest('.menu-link-home')) {
-				bodyLockToggle();
-				document.documentElement.classList.add("home-link-open");
-        document.documentElement.classList.remove("menu-open");
-			}
-		});
-	};
-}
-aboutInit();
-
-function filtersInit() {
-	if (document.querySelector(".btn-all-filters")) {
-		document.addEventListener("click", function (e) {
-			if (bodyLockStatus && e.target.closest('.btn-all-filters')) {
-				bodyLockToggle();
-				document.documentElement.classList.add("filters-all");
-        document.documentElement.classList.add("side-open");
-        document.documentElement.classList.remove("menu-open");
-        document.documentElement.classList.remove("home-link-open");
-        document.documentElement.classList.remove("item-show");
-			}
-		});
-	};
-}
-filtersInit();
+const allFilters = document.querySelector(".btn-all-filters"); 
+if (allFilters) {
+	allFilters.addEventListener("click", function (e) {
+		if (e.target.closest('.btn-all-filters')) {
+      lockSideAdd();
+			document.documentElement.classList.add("filters-all");
+      document.documentElement.classList.remove("menu-open");
+      document.documentElement.classList.remove("contacts-open");
+      document.documentElement.classList.remove("item-show");
+			document.documentElement.classList.remove("cart-open");
+		}
+	});
+};
 
 
 const productItem = document.querySelectorAll(".product");
@@ -94,267 +54,49 @@ productItem.forEach(item => {
   item.addEventListener("click", itemInit);
 });
 function itemInit() {
-  bodyLockToggle();
+  lockSideAdd();
   document.documentElement.classList.add("item-show");
-  document.documentElement.classList.add("side-open");
   document.documentElement.classList.remove("menu-open");
-  document.documentElement.classList.remove("home-link-open");
+  document.documentElement.classList.remove("contacts-open");
   document.documentElement.classList.remove("filters-all");
+	document.documentElement.classList.remove("cart-open");
 }
 
+
+const headerCart = document.querySelectorAll(".header__cart");
+headerCart.forEach(item => {
+	item.addEventListener("click", cartInit);
+});
+function cartInit() {
+  lockSideAdd();
+  document.documentElement.classList.add("cart-open");
+  document.documentElement.classList.remove("menu-open");
+  document.documentElement.classList.remove("contacts-open");
+  document.documentElement.classList.remove("filters-all");
+  document.documentElement.classList.remove("item-show");
+}
+
+const sideIcon = document.querySelectorAll(".side__icons");
+sideIcon.forEach(items => {
+	items.addEventListener("click", sideClose);
+});
 function sideClose() {
-	if (document.querySelector(".side__icons")) {
-		document.addEventListener("click", function (e) {
-			if (bodyLockStatus && e.target.closest('.side__icons')) {
-				bodyLockToggle();
-        document.documentElement.classList.remove("menu-open");
-        document.documentElement.classList.remove("side-open");
-        document.documentElement.classList.remove("home-link-open");
-        document.documentElement.classList.remove("filters-all");
-        document.documentElement.classList.remove("item-show");
-			}
-		});
-	};
+    document.documentElement.classList.remove("lock");
+		document.documentElement.classList.remove("side-open");
+    document.documentElement.classList.remove("menu-open");
+    document.documentElement.classList.remove("contacts-open");
+    document.documentElement.classList.remove("filters-all");
+    document.documentElement.classList.remove("item-show");
+    document.documentElement.classList.remove("cart-open");
 }
-sideClose();
 
 
- /* Tabs */
- function tabs() {
-  const tabs = document.querySelectorAll("[data-tabs]");
-  let tabsActiveHash = [];
-
-  if (tabs.length > 0) {
-    tabs.forEach((tabsBlock, index) => {
-      tabsBlock.classList.add("_tab-init");
-      tabsBlock.setAttribute("data-tabs-index", index);
-      tabsBlock.addEventListener("click", setTabsAction);
-      tabsBlock.addEventListener('mouseover', setTabsAction);
-      initTabs(tabsBlock);
-      
-    });
-  }
-  // Установка позиций заголовков
-  function setTitlePosition(tabsMediaArray, matchMedia) {
-    tabsMediaArray.forEach((tabsMediaItem) => {
-      tabsMediaItem = tabsMediaItem.item;
-      let tabsTitles = tabsMediaItem.querySelector("[data-tabs-titles]");
-      let tabsTitleItems =
-        tabsMediaItem.querySelectorAll("[data-tabs-title]");
-      let tabsContent = tabsMediaItem.querySelector("[data-tabs-body]");
-      let tabsContentItems =
-        tabsMediaItem.querySelectorAll("[data-tabs-item]");
-      tabsTitleItems = Array.from(tabsTitleItems).filter(
-        (item) => item.closest("[data-tabs]") === tabsMediaItem
-      );
-      tabsContentItems = Array.from(tabsContentItems).filter(
-        (item) => item.closest("[data-tabs]") === tabsMediaItem
-      );
-      tabsContentItems.forEach((tabsContentItem, index) => {
-        if (matchMedia.matches) {
-          tabsContent.append(tabsTitleItems[index]);
-          tabsContent.append(tabsContentItem);
-          tabsMediaItem.classList.add("_tab-spoller");
-        } else {
-          tabsTitles.append(tabsTitleItems[index]);
-          tabsMediaItem.classList.remove("_tab-spoller");
-        }
-      });
-    });
-  }
-  // Работа с контентом
-  function initTabs(tabsBlock) {
-    let tabsTitles = tabsBlock.querySelectorAll("[data-tabs-titles]>*");
-    let tabsContent = tabsBlock.querySelectorAll("[data-tabs-body]>*");
-    const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
-    const tabsActiveHashBlock = tabsActiveHash[0] == tabsBlockIndex;
-
-    if (tabsActiveHashBlock) {
-      const tabsActiveTitle = tabsBlock.querySelector(
-        "[data-tabs-titles]>._tab-active"
-      );
-      tabsActiveTitle
-        ? tabsActiveTitle.classList.remove("_tab-active")
-        : null;
-    }
-    if (tabsContent.length) {
-      tabsContent = Array.from(tabsContent).filter(
-        (item) => item.closest("[data-tabs]") === tabsBlock
-      );
-      tabsTitles = Array.from(tabsTitles).filter(
-        (item) => item.closest("[data-tabs]") === tabsBlock
-      );
-      tabsContent.forEach((tabsContentItem, index) => {
-        tabsTitles[index].setAttribute("data-tabs-title", "");
-        tabsContentItem.setAttribute("data-tabs-item", "");
-
-        if (tabsActiveHashBlock && index == tabsActiveHash[1]) {
-          tabsTitles[index].classList.add("_tab-active");
-        }
-        tabsContentItem.hidden =
-          !tabsTitles[index].classList.contains("_tab-active");
-      });
-    }
-  }
-  function setTabsStatus(tabsBlock) {
-    let tabsTitles = tabsBlock.querySelectorAll("[data-tabs-title]");
-    let tabsContent = tabsBlock.querySelectorAll("[data-tabs-item]");
-    const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
-    function isTabsAnamate(tabsBlock) {
-      if (tabsBlock.hasAttribute("data-tabs-animate")) {
-        return tabsBlock.dataset.tabsAnimate > 0
-          ? Number(tabsBlock.dataset.tabsAnimate)
-          : 500;
-      }
-    }
-    const tabsBlockAnimate = isTabsAnamate(tabsBlock);
-    if (tabsContent.length > 0) {
-      const isHash = tabsBlock.hasAttribute("data-tabs-hash");
-      tabsContent = Array.from(tabsContent).filter(
-        (item) => item.closest("[data-tabs]") === tabsBlock
-      );
-      tabsTitles = Array.from(tabsTitles).filter(
-        (item) => item.closest("[data-tabs]") === tabsBlock
-      );
-      tabsContent.forEach((tabsContentItem, index) => {
-        if (tabsTitles[index].classList.contains("_tab-active")) {
-          if (tabsBlockAnimate) {
-            _slideDown(tabsContentItem, tabsBlockAnimate);
-          } else {
-            tabsContentItem.hidden = false;
-          }
-          if (isHash && !tabsContentItem.closest(".popup")) {
-            setHash(`tab-${tabsBlockIndex}-${index}`);
-          }
-        } else {
-          if (tabsBlockAnimate) {
-            _slideUp(tabsContentItem, tabsBlockAnimate);
-          } else {
-            tabsContentItem.hidden = true;
-          }
-        }
-      });
-    }
-  }
-  function setTabsAction(e) {
-    const el = e.target;
-    if (el.closest("[data-tabs-title]")) {
-      const tabTitle = el.closest("[data-tabs-title]");
-      const tabsBlock = tabTitle.closest("[data-tabs]");
-      if (
-        !tabTitle.classList.contains("_tab-active") &&
-        !tabsBlock.querySelector("._slide")
-      ) {
-        let tabActiveTitle = tabsBlock.querySelectorAll(
-          "[data-tabs-title]._tab-active"
-        );
-        tabActiveTitle.length
-          ? (tabActiveTitle = Array.from(tabActiveTitle).filter(
-              (item) => item.closest("[data-tabs]") === tabsBlock
-            ))
-          : null;
-        tabActiveTitle.length
-          ? tabActiveTitle[0].classList.remove("_tab-active")
-          : null;
-        tabTitle.classList.add("_tab-active");
-        setTabsStatus(tabsBlock);
-      }
-      // e.preventDefault();
-    }
-  }
-}
-tabs();
-
-
-	// if (document.querySelector('.filters__slider')) { 
-	// 	// Створюємо слайдер
-	// 	new Swiper('.filters__slider', {
-	// 		slidesPerView: 10,
-	// 		// spaceBetween: 0,
-	// 		// autoHeight: true,
-	// 		// speed: 800,
-	// 		//touchRatio: 0,
-	// 		//simulateTouch: false,
-	// 		// loop: true,
-	// 		//preloadImages: false,
-	// 		//lazy: true,
-	// 		/*
-	// 		// Ефектиnpm run
-	// 		effect: 'fade',
-	// 		autoplay: {
-	// 			delay: 3000,
-	// 			disableOnInteraction: false,
-	// 		},
-	// 		*/
-
-	// 		// Пагінація
-	// 		/*
-	// 		pagination: {
-	// 			el: '.swiper-pagination',
-	// 			clickable: true,
-	// 		},
-	// 		*/
-
-	// 		// Скроллбар
-	// 		scrollbar: {
-	// 			el: '.swiper-scrollbar',
-	// 			draggable: true,
-	// 		},
-
-	// 		// Кнопки "вліво/вправо"
-	// 		// navigation: {
-	// 		// 	prevEl: '.filters__slider .swiper-button-prev',
-	// 		// 	nextEl: '.filters__slider .swiper-button-next',
-	// 		// },
-	// 		/*
-	// 		// Брейкпоінти
-	// 		breakpoints: {
-	// 			640: {
-	// 				slidesPerView: 1,
-	// 				spaceBetween: 0,
-	// 				autoHeight: true,
-	// 			},
-	// 			768: {
-	// 				slidesPerView: 2,
-	// 				spaceBetween: 20,
-	// 			},
-	// 			992: {
-	// 				slidesPerView: 3,
-	// 				spaceBetween: 20,
-	// 			},
-	// 			1268: {
-	// 				slidesPerView: 4,
-	// 				spaceBetween: 30,
-	// 			},
-	// 		},
-	// 		*/
-	// 		// Події
-	// 		on: {
-
-	// 		}
-	// 	});
-	// }
-  
+// == PRODUCR-ITEM SLIDER ==================================================
 	if (document.querySelector('.product-item__slider')) { 
 		// Створюємо слайдер
 		new Swiper('.product-item__slider', {
 			slidesPerView: 1,
-			// spaceBetween: 24,
-			// autoHeight: true,
-			// speed: 800,
-			//touchRatio: 0,
-			//simulateTouch: false,
 			loop: true,
-			//preloadImages: false,
-			//lazy: true,
-			/*
-			// Ефектиnpm run
-			effect: 'fade',
-			autoplay: {
-				delay: 3000,
-				disableOnInteraction: false,
-			},
-			*/
 			pagination: {
 				el: '.product-item__slider .swiper-pagination',
 				clickable: true,
@@ -363,31 +105,43 @@ tabs();
 				prevEl: '.product-item__slider .swiper-button-prev',
 				nextEl: '.product-item__slider .swiper-button-next',
 			},
-			/*
-			// Брейкпоінти
-			breakpoints: {
-				640: {
-					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
-				},
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
-				},
-			},
-			*/
-			// Події
-			on: {
-
-			}
 		});
 	}
+
+             
+  // == Input Mask for Phone input  =========================================================
+  [].forEach.call( document.querySelectorAll('.tel-input'), function(input) {
+    var keyCode;
+    function mask(event) {
+        event.keyCode && (keyCode = event.keyCode);
+        var pos = this.selectionStart;
+        if (pos < 3) event.preventDefault();
+        var matrix = "+7 (___) ___ ____",
+            i = 0,
+            def = matrix.replace(/\D/g, ""),
+            val = this.value.replace(/\D/g, ""),
+            new_value = matrix.replace(/[_\d]/g, function(a) {
+                return i < val.length ? val.charAt(i++) || def.charAt(i) : a
+            });
+        i = new_value.indexOf("_");
+        if (i != -1) {
+            i < 5 && (i = 3);
+            new_value = new_value.slice(0, i)
+        }
+        var reg = matrix.substr(0, this.value.length).replace(/_+/g,
+            function(a) {
+                return "\\d{1," + a.length + "}"
+            }).replace(/[+()]/g, "\\$&");
+        reg = new RegExp("^" + reg + "$");
+        if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = new_value;
+        if (event.type == "blur" && this.value.length < 5)  this.value = ""
+    }
+  
+    input.addEventListener("input", mask, false);
+    input.addEventListener("focus", mask, false);
+    input.addEventListener("blur", mask, false);
+    input.addEventListener("keydown", mask, false);
+  
+    });
+
+  });
