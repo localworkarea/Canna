@@ -93,7 +93,6 @@ function sideClose() {
 
 // == PRODUCR-ITEM SLIDER ==================================================
 	if (document.querySelector('.product-item__slider')) { 
-		// Створюємо слайдер
 		new Swiper('.product-item__slider', {
 			slidesPerView: 1,
 			loop: true,
@@ -143,5 +142,23 @@ function sideClose() {
     input.addEventListener("keydown", mask, false);
   
     });
+
+    // == CART STATUS ===============================================================================
+    const cartProductWrap = document.querySelector('.cart__product-item');
+    
+    // add class to header__cart ---------------
+    if (cartProductWrap.children.length > 0) {
+      // console.log ('CART FULL');
+      headerCart.forEach(item => {
+        item.classList.add('cart-full');
+        item.classList.remove('cart-empty');
+      });
+    } else {
+      // console.log ('CART EMPTY');
+      headerCart.forEach(item => {
+        item.classList.remove('cart-full');
+        item.classList.add('cart-empty');
+      });
+    }
 
   });

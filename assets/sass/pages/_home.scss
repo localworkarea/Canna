@@ -40,8 +40,6 @@
 		}
 		// .header__icon
 		&__icon {
-      filter: invert(25%) sepia(20%) saturate(6839%) hue-rotate(249deg) brightness(90%) contrast(91%);
-      
 		}
 		// .header__wrap
 		&__wrap {
@@ -56,17 +54,32 @@
 		// .header__cart
 		&__cart {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       column-gap: 8px;
       transition: all .2s linear;;
-
-      
+      &.cart-full {
+        .header__cart-title {
+          color: $mainColor;
+        }
+        .header__icon {
+          filter: invert(25%) sepia(89%) saturate(6043%) hue-rotate(243deg) brightness(95%) contrast(96%);
+        }
+      }
+      &.cart-empty {
+        pointer-events: none;
+        .header__cart-title {
+          color: $grayDark;
+        }
+        .header__icon {
+          filter: invert(74%) sepia(0%) saturate(21%) hue-rotate(167deg) brightness(91%) contrast(81%);
+        }
+      }
 		}
 		// .header__cart-title
 		&__cart-title {
       font-weight: 700;
       font-size: 14px;
-      line-height: 1.29;
+      line-height: 1.5;
       text-transform: uppercase;
       max-width: fit-content;
 		}
@@ -131,7 +144,7 @@
 // == HEADER MENU + MENU-SIDE ===============================================
 .menu {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   column-gap: 8px;
 		// .menu__title
 		&__title {
@@ -276,8 +289,9 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 1.1;
+    max-width: rem(523);
     &:not(:last-child) {
-      margin-bottom: 16px;
+      margin-bottom: rem(32);
     }
     @include netbook {
       max-width: 500px;
@@ -289,7 +303,8 @@
   // .head__icons
   &__icons {
     display: flex;
-    column-gap: 16px;
+    gap: 16px;
+    flex-wrap: wrap;
   }
   // .head__icon
   &__icon {
@@ -377,23 +392,6 @@
   &__item {
     min-width: fit-content;
   }
-    // // .filters__slider
-    // &__slider {
-    //   @include adaptiveValue("margin-top", 40, 24);
-    //   margin-bottom: 16px;
-    //   position: relative;
-    //   height: 44px;
-    //   .swiper-scrollbar {
-    //     top: 31px;
-    //   }
-    // }
-    // // .filters__wrapper
-    // &__wrapper {
-    //   height: 44px;
-    // }
-    // // .filters__slide
-    // &__slide {
-    // }
   // .filters__link
   &__link {
     font-weight: 700;
@@ -463,7 +461,7 @@
   }
   // .filters__image-sort
   &__image-sort {
-    filter: invert(25%) sepia(20%) saturate(6839%) hue-rotate(249deg) brightness(90%) contrast(91%);
+     filter: invert(25%) sepia(89%) saturate(6043%) hue-rotate(243deg) brightness(95%) contrast(96%);
   }
   // .filters__image-sort-rev
   &__image-sort-rev {
@@ -502,7 +500,7 @@
 // ================================================================
 // == SECTION PRODUCTS ===============================================
 .products {
-  margin-bottom: 32px;
+  margin-bottom: rem(88);
   // .products__container
   &__container {
     display: grid;
@@ -540,6 +538,12 @@
     position: relative;
     overflow: hidden;
     padding-bottom: 109%;
+    transition: opacity .2s linear;
+    cursor: pointer;;
+    &:hover {
+      opacity: .3;
+
+    }
   }
   // .product__img
   &__img {
@@ -577,6 +581,7 @@
     font-weight: 400;
     font-size: 18px;
     line-height: calc(16/18);
+    text-align: left;
     @include adaptiveValue("margin-bottom", 24, 16);
     @include tablet {
       @include adaptiveValue("font-size", 18, 12);
@@ -626,7 +631,7 @@
   opacity: 0;
   visibility: hidden;
   transform: translateX(100%);
-  transition: all .2s linear;
+  transition: all .3s linear;
   min-height: 100%;
   min-width: 0%;
   background-color: $grayLight;
@@ -659,22 +664,22 @@
 		// .side__menu
 		&__menu {
       background-color: $grayLight;
-      position: absolute;
+      position: fixed;
       top: 0;
-      left: 100%;
+      right: -100%;
       opacity: 0;
       visibility: hidden;
-      min-width: 0%;
-      width: 100%;
-      min-height: 100%;
+      width: 407px;
+      height: 100%;
+      overflow-y: auto;
       z-index: 5;
-      transition: all .2s linear;
+      transition: all .3s linear;
       padding: 16px 32px 24px;
       display: flex;
       flex-direction: column;
       @include tablet {
-        height: 100%;
-        overflow: hidden;
+        z-index: 10;
+        width: 100%;
         flex-direction: column-reverse;
         padding: 16px 0 0 0;
         .side__nav {
@@ -691,8 +696,7 @@
       }
     
       .menu-open & {
-        top: 0;
-        left: 0;
+        right: 0;
         opacity: 1;
         visibility: visible;
       }
@@ -721,24 +725,24 @@
 // -- about ----------
 .about {
   background-color: $grayLight;
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 100%;
+  right: -100%;
   opacity: 0;
   visibility: hidden;
-  width: 100%;
-  min-height: 100%;
+  width: 407px;
+  height: 100%;
+  overflow-y: auto;
   z-index: 5;
-  transition: all .2s linear;
+  transition: all .3s linear;
 
   @include tablet {
-    overflow-y: auto;
-    height: 100%;
+    z-index: 10;
+    width: 100%;
   }
 
   .contacts-open & {
-    top: 0;
-    left: 0;
+    right: 0;
     opacity: 1;
     visibility: visible;
   }
@@ -764,7 +768,6 @@
       
     }
   }
-
     // .about__info-wrap
   &__info-wrap {
   }
@@ -850,24 +853,25 @@
 // -- filter ----------
 .filter-side {
   background-color: $grayLight;
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 100%;
+  right: -100%;
   opacity: 0;
   visibility: hidden;
-  width: 100%;
-  min-height: 100%;
+  width: 407px;
+  height: 100%;
+  overflow-y: auto;
   z-index: 6;
-  transition: all .2s linear;
+  transition: all .3s linear;
   display: flex;
   flex-direction: column;
+ 
   @include tablet {
-    overflow-y: auto;
-    height: 100%;
+    width: 100%;
+
   }
   .filters-all & {
-    top: 0;
-    left: 0;
+    right: 0;
     opacity: 1;
     visibility: visible;
   }
@@ -884,7 +888,7 @@
   &__body {
     flex: 1 1 auto;
     padding: 0 32px;
-    margin-bottom: 24px;
+    margin-bottom: rem(88);
   }
   // .filter-side__price
   &__price {
@@ -940,35 +944,40 @@
     align-items: center;
     padding: 16px 32px;
     background-color: $gray;
+    position: fixed;
+    bottom: 0;
+    @include tablet {
+      width: 100%;
+    }
   }
   // .filter-side__btn
   &__btn {
     width: 172px;
     height: 48px;
+  
   }
 }
 // -- product-item ----------
 .product-item {
   background-color: $grayLight;
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 100%;
+  right: -100%;
   opacity: 0;
   visibility: hidden;
-  width: 100%;
-  min-height: 100%;
+  width: 407px;
+  height: 100%;
+  overflow-y: auto;
   z-index: 6;
-  transition: all .2s linear;
+  transition: all .3s linear;
   display: flex;
   flex-direction: column;
   @include tablet {
-    overflow-y: auto;
-    height: 100%;
+    width: 100%;
   }
-  
+
   .item-show & {
-    top: 0;
-    left: 0;
+    right: 0;
     opacity: 1;
     visibility: visible;
   }
@@ -1033,7 +1042,7 @@
   &__body {
     padding: 0 32px;
     flex: 1 1 auto;
-    margin-bottom: 32px;
+    margin-bottom: rem(112);
     @include tablet {
       padding: 0 16px;
     }
@@ -1097,7 +1106,7 @@
   &__about {
   }
   // .product-item__text
-  &__text {
+  &__main-text {
     &:not(:last-child) {
       margin-bottom: 24px;
     }
@@ -1114,8 +1123,13 @@
     justify-content: space-between;
     padding: 15px 32px;
     background-color: $gray;
+    bottom: 0;
+    position: fixed;
+    width: 407px;
+    z-index: 10;
     @include tablet {
       padding: 15px 16px;
+      width: 100%;
     }
   }
   // .product-item__price
@@ -1143,28 +1157,29 @@
     height: 48px;
   }
 }
-// -- cart ----------
+
+// -- cart --------------------------------
 .cart {
   background-color: $grayLight;
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 100%;
+  right: -100%;
   opacity: 0;
   visibility: hidden;
-  width: 100%;
-  min-height: 100%;
+  width: 407px;
+  height: 100%;
+  overflow-y: auto;
+  height: 100%;
   z-index: 6;
-  transition: all .2s linear;
+  transition: all .3s linear;
   padding: 16px 32px;
   @include tablet {
-    overflow-y: auto;
-    height: 100%;
     padding: 16px;
+    width: 100%;
   }
   
   .cart-open & {
-    top: 0;
-    left: 0;
+    right: 0;
     opacity: 1;
     visibility: visible;
   }
@@ -1499,13 +1514,6 @@
 
 .thank-you {
   &__page {
-    .header__cart-title {
-      color: $grayDark;
-      pointer-events: none;
-    }
-    .header__icon {
-      filter: invert(74%) sepia(0%) saturate(21%) hue-rotate(167deg) brightness(91%) contrast(81%);
-    }
   }
   &__section {
     .head__subtitle {

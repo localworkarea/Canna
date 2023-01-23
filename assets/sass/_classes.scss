@@ -2,6 +2,7 @@
   display: flex;
   min-height: 100%;
 	overflow: hidden;
+	position: relative;
 	@supports (overflow: clip) {
 		overflow: clip;
 	}
@@ -79,9 +80,6 @@ textarea {
 		width: 0;
 		height: 0;
 		opacity: 0;
-		&:focus + .checkbox__label:before {
-			// box-shadow: 0 0 5px #000;
-		}
 		&:checked + .checkbox__label {
 			&::before {
 				background-color: $purple;
@@ -100,7 +98,6 @@ textarea {
 	&__label {
 		cursor: pointer;
 		display: inline-flex;
-		display: -webkit-inline-box;
   	display: -ms-inline-flexbox;
 		position: relative;
 		gap: 10px;
