@@ -6,9 +6,6 @@
 	@supports (overflow: clip) {
 		overflow: clip;
 	}
-	@include tablet {
-		position: relative;
-	}
 }
 .left-wrapper {
   flex: 1 1 auto;
@@ -196,4 +193,24 @@ textarea {
 	} 
 }
 
-
+.side-common {
+	background-color: $grayLight;
+  border-left: 1px solid $grayDark;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 407px;
+  height: 100%;
+  transform: translateX(100%);
+  visibility: hidden;
+	overflow: hidden;
+  transition: all .4s ease;
+  display: flex;
+  flex-direction: column;
+	z-index: 5;
+	@include tablet {
+		width: 100%;
+		z-index: 6;
+		border-left:unset;
+	}
+}

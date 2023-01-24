@@ -305,6 +305,9 @@
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
+    @include mobile {
+      flex-wrap: nowrap;
+    }
   }
   // .head__icon
   &__icon {
@@ -627,59 +630,31 @@
 // ================================================================
 // == SIDE ELEMENTS ===============================================
 .side {
-  position: relative;
+  filter: drop-shadow(-1px 0px 0px #A2A2A2);
+  background-color: $grayLight;
   opacity: 0;
   visibility: hidden;
   transform: translateX(100%);
-  transition: all .3s linear;
-  min-height: 100%;
+  transition: all .5s ease;
+  height: 100%;
   min-width: 0%;
-  background-color: $grayLight;
-  filter: drop-shadow(-1px 0px 0px #A2A2A2);
+  z-index: 4;
   @include tablet {
     position: absolute;
     max-width: 100%;
     min-width: 100%;
-    height: 100%;
-    z-index: 6;
   }
 
   .side-open & {
-    display: flex;
-    opacity: 1;
-    visibility: visible;
     transform: translateX(0);
-    position: relative;
     max-width: 407px;
     min-width: 407px;
-    @include tablet {
-      position: fixed;
-      max-width: 100%;
-      min-width: 100%;
-      height: 100%;
-      z-index: 6;
-      overflow: hidden;
-    }
   }
 		// .side__menu
 		&__menu {
-      background-color: $grayLight;
-      position: fixed;
-      top: 0;
-      right: -100%;
-      opacity: 0;
-      visibility: hidden;
-      width: 407px;
-      height: 100%;
-      overflow-y: auto;
-      z-index: 5;
-      transition: all .3s linear;
       padding: 16px 32px 24px;
-      display: flex;
-      flex-direction: column;
+      overflow-y: auto;
       @include tablet {
-        z-index: 10;
-        width: 100%;
         flex-direction: column-reverse;
         padding: 16px 0 0 0;
         .side__nav {
@@ -696,8 +671,7 @@
       }
     
       .menu-open & {
-        right: 0;
-        opacity: 1;
+        transform: translateX(0);
         visibility: visible;
       }
 		}
@@ -724,26 +698,9 @@
 }
 // -- about ----------
 .about {
-  background-color: $grayLight;
-  position: fixed;
-  top: 0;
-  right: -100%;
-  opacity: 0;
-  visibility: hidden;
-  width: 407px;
-  height: 100%;
   overflow-y: auto;
-  z-index: 5;
-  transition: all .3s linear;
-
-  @include tablet {
-    z-index: 10;
-    width: 100%;
-  }
-
   .contacts-open & {
-    right: 0;
-    opacity: 1;
+    transform: translateX(0);
     visibility: visible;
   }
   
@@ -852,43 +809,48 @@
 }
 // -- filter ----------
 .filter-side {
-  background-color: $grayLight;
-  position: fixed;
-  top: 0;
-  right: -100%;
-  opacity: 0;
-  visibility: hidden;
-  width: 407px;
-  height: 100%;
-  overflow-y: auto;
-  z-index: 6;
-  transition: all .3s linear;
-  display: flex;
-  flex-direction: column;
  
-  @include tablet {
-    width: 100%;
-
-  }
   .filters-all & {
-    right: 0;
-    opacity: 1;
+    transform: translateX(0);
     visibility: visible;
   }
-    .side__nav {
-      padding: 16px 32px 0;
-      .side__back-icon {
+  .side__nav {
+    padding: 16px 32px 0;
+    @include tablet {
+      padding: 16px 16px 0 16px;
+      justify-content: unset;
+      .header__cart {
         display: none;
       }
-      &:not(:last-child) {
-        margin-bottom: 42px;
-      }  
     }
+    .side__back-icon {
+      display: none;
+    }
+    &:not(:last-child) {
+      margin-bottom: 42px;
+    }  
+  }
+  // .filter-side__wrap
+  &__wrap {
+    overflow-y: auto;
+  }
+  &__main-title {
+    display: none;
+    
+    @include tablet {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+  }
   // .filter-side__body
   &__body {
     flex: 1 1 auto;
     padding: 0 32px;
     margin-bottom: rem(88);
+    @include tablet {
+      padding: 0 16px;
+    }
   }
   // .filter-side__price
   &__price {
@@ -939,15 +901,17 @@
   }
   // .filter-side__bottom
   &__bottom {
+    position: fixed;
+    bottom: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 16px 32px;
     background-color: $gray;
-    position: fixed;
-    bottom: 0;
+    
     @include tablet {
       width: 100%;
+      padding: 16px;
     }
   }
   // .filter-side__btn
@@ -959,26 +923,9 @@
 }
 // -- product-item ----------
 .product-item {
-  background-color: $grayLight;
-  position: fixed;
-  top: 0;
-  right: -100%;
-  opacity: 0;
-  visibility: hidden;
-  width: 407px;
-  height: 100%;
-  overflow-y: auto;
-  z-index: 6;
-  transition: all .3s linear;
-  display: flex;
-  flex-direction: column;
-  @include tablet {
-    width: 100%;
-  }
-
+  
   .item-show & {
-    right: 0;
-    opacity: 1;
+    transform: translateX(0);
     visibility: visible;
   }
   .side__nav { 
@@ -1015,8 +962,10 @@
       margin-bottom: 48px;
     }
   }
-  // .product-item__wrapper
-  &__wrapper {
+  // .product-item__wrap
+  &__wrap {
+    overflow-y: auto;
+    position: relative;
   }
   // .product-item__slide
   &__slide {
@@ -1160,27 +1109,14 @@
 
 // -- cart --------------------------------
 .cart {
-  background-color: $grayLight;
-  position: fixed;
-  top: 0;
-  right: -100%;
-  opacity: 0;
-  visibility: hidden;
-  width: 407px;
-  height: 100%;
-  overflow-y: auto;
-  height: 100%;
-  z-index: 6;
-  transition: all .3s linear;
   padding: 16px 32px;
+  overflow-y: auto;
   @include tablet {
     padding: 16px;
-    width: 100%;
   }
   
   .cart-open & {
-    right: 0;
-    opacity: 1;
+    transform: translateX(0);
     visibility: visible;
   }
   .side__nav {
