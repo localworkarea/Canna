@@ -441,6 +441,7 @@
     width: 154px;
     height: 44px;
     overflow: hidden;
+    cursor: pointer;
     .btn-all-filters {
       display: flex;
       gap: 8px;
@@ -961,7 +962,7 @@
   // .product-item__blocks 
   &__blocks {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: minmax(320px, 673px) 50%;
     @include adaptiveValue("padding-left", 83, 32);
     @include adaptiveValue("padding-right", 83, 32);
     @include adaptiveValue("padding-right", 95, 32);

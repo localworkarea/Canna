@@ -34,10 +34,10 @@ if (menuLinkContact) {
 	});
 };
 
-const allFilters = document.querySelector(".btn-all-filters"); 
+const allFilters = document.querySelector(".filters__all-filters"); 
 if (allFilters) {
 	allFilters.addEventListener("click", function (e) {
-		if (e.target.closest('.btn-all-filters')) {
+		if (e.target.closest('.filters__all-filters')) {
       lockSideAdd();
 			document.documentElement.classList.add("filters-all");
       document.documentElement.classList.remove("menu-open");
@@ -121,7 +121,7 @@ function sideClose() {
       slidesPerView: "auto",
       spaceBetween: 24,
       centeredSlides: false,
-      loop: true,
+      loop: false,
 		});
 	}
 
