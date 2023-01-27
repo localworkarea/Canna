@@ -608,7 +608,7 @@ button.swiper-pagination-bullet {
   border-radius: 10px;
   position: relative;
   -ms-touch-action: none;
-  background: rgba(0, 0, 0, .1)
+  background: $gray;
 }
 
 .swiper-scrollbar-disabled>.swiper-scrollbar,
@@ -619,11 +619,12 @@ button.swiper-pagination-bullet {
 .swiper-horizontal>.swiper-scrollbar,
 .swiper-scrollbar.swiper-scrollbar-horizontal {
   position: absolute;
-  left: 1%;
-  bottom: 3px;
+  left: 0;
+  bottom: 0;
   z-index: 50;
   height: 2px;
-  width: 98%
+  width: 100%;
+  z-index: -1;
 }
 
 .swiper-scrollbar.swiper-scrollbar-vertical,

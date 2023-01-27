@@ -107,6 +107,16 @@ function sideClose() {
 		});
 	}
 
+  // == PRODUCR-ITEM SLIDER ==================================================
+  if (document.querySelector('.filters__slider')) { 
+		new Swiper('.filters__slider', {
+      slidesPerView: "auto",
+      spaceBetween: 24,
+      centeredSlides: false,
+      loop: true,
+		});
+	}
+
              
   // == Input Mask for Phone input  =========================================================
   [].forEach.call( document.querySelectorAll('.tel-input'), function(input) {
