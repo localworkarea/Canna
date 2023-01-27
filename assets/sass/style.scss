@@ -5,13 +5,8 @@
 @import "helpers/media-query";
 
 /* Template */
-@import "common/fonts";
 @import "template";
 @import "classes";
-
-/* Sections for all pages */
-@import "sections/header";
-@import "sections/footer";
 
 /* Pages */
 @import "pages/home";

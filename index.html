@@ -366,7 +366,7 @@
           <img class="head__icon-img" src="assets/img/icons/Telegram.svg" alt="icon">
         </a>
         <a href="#" class="head__icon">
-          <img class="head__icon-img" src="assets/img/icons/What’sApp.svg" alt="icon">
+          <img class="head__icon-img" src="assets/img/icons/What’sApp.png" alt="icon">
         </a>
         <a href="#" class="head__icon">
           <img class="head__icon-img" src="assets/img/icons/Facebook.svg" alt="icon">
@@ -448,6 +448,7 @@
           <button class="side__icons">
             <img class="side__close-icon" src="assets/img/icons/Close.svg" alt="cart">
             <img class="side__back-icon" src="assets/img/icons/arrow.svg" alt="cart">
+            <div class="product-item__side-nav-title">ещё товары</div>
           </button>
           <div class="header__cart">
             <div class="header__cart-title">Корзина</div>
@@ -457,69 +458,122 @@
             </button>
           </div>
         </div>
-        <div class="product-item__slider slider-item">
-          <div class="product-item__slider swiper">
-            <div class="product-item__wrapper swiper-wrapper">
-              <div class="product-item__slide swiper-slide">
-                <div class="product-item__image">
-                  <img class="product-item__img" src="assets/img/products/4.png" alt="item">
+        <div class="product-item__blocks">
+          <div class="product-item__sliders">
+            <div class="product-item__slider slider-item">
+              <div class="product-item__slider swiper">
+                <div class="product-item__wrapper swiper-wrapper">
+                  <div class="product-item__slide swiper-slide">
+                    <div class="product-item__image">
+                      <img class="product-item__img" src="assets/img/products/4.png" alt="item">
+                    </div>
+                  </div>
+                  <div class="product-item__slide swiper-slide">
+                    <div class="product-item__image">
+                      <img class="product-item__img" src="assets/img/products/4.png" alt="item">
+                    </div>
+                  </div>
+                  <div class="product-item__slide swiper-slide">
+                    <div class="product-item__image">
+                      <img class="product-item__img" src="assets/img/products/4.png" alt="item">
+                    </div>
+                  </div>
+                  <div class="product-item__slide swiper-slide">
+                    <div class="product-item__image">
+                      <img class="product-item__img" src="assets/img/products/4.png" alt="item">
+                    </div>
+                  </div>
+                  <div class="product-item__slide swiper-slide">
+                    <div class="product-item__image">
+                      <img class="product-item__img" src="assets/img/products/4.png" alt="item">
+                    </div>
+                  </div>
+                  <div class="product-item__slide swiper-slide">
+                    <div class="product-item__image">
+                      <img class="product-item__img" src="assets/img/products/4.png" alt="item">
+                    </div>
+                  </div>
                 </div>
+                <button type="button" class="swiper-button-prev">
+                  <img class="product-item__left" src="assets/img/icons/arrow-swiper.svg" alt="arrow">
+                </button>
+                <button type="button" class="swiper-button-next">
+                  <img class="product-item__right" src="assets/img/icons/arrow-swiper.svg" alt="arrow">
+                </button>
               </div>
-              <div class="product-item__slide swiper-slide">
-                <div class="product-item__image">
-                  <img class="product-item__img" src="assets/img/products/4.png" alt="item">
+              <div class="swiper-pagination"></div>
+            </div>
+            <div class="product-item__slider-mini swiper">
+              <div class="product-item__wrapper-mini swiper-wrapper">
+                <div class="product-item__slide-mini swiper-slide">
+                  <div class="product-item__image">
+                    <img class="product-item__img" src="assets/img/products/mini-1.png" alt="item">
+                  </div>
                 </div>
-              </div>
-              <div class="product-item__slide swiper-slide">
-                <div class="product-item__image">
-                  <img class="product-item__img" src="assets/img/products/4.png" alt="item">
+                <div class="product-item__slide-mini swiper-slide">
+                  <div class="product-item__image">
+                    <img class="product-item__img" src="assets/img/products/mini-2.png" alt="item">
+                  </div>
                 </div>
-              </div>
-              <div class="product-item__slide swiper-slide">
-                <div class="product-item__image">
-                  <img class="product-item__img" src="assets/img/products/4.png" alt="item">
+                <div class="product-item__slide-mini swiper-slide">
+                  <div class="product-item__image">
+                    <img class="product-item__img" src="assets/img/products/mini-3.png" alt="item">
+                  </div>
+                </div>
+                <div class="product-item__slide-mini swiper-slide">
+                  <div class="product-item__image">
+                    <img class="product-item__img" src="assets/img/products/mini-4.png" alt="item">
+                  </div>
+                </div>
+                <div class="product-item__slide-mini swiper-slide">
+                  <div class="product-item__image">
+                    <img class="product-item__img" src="assets/img/products/mini-1.png" alt="item">
+                  </div>
+                </div>
+                <div class="product-item__slide-mini swiper-slide">
+                  <div class="product-item__image">
+                    <img class="product-item__img" src="assets/img/products/mini-2.png" alt="item">
+                  </div>
                 </div>
               </div>
             </div>
-            <button type="button" class="swiper-button-prev"></button>
-            <button type="button" class="swiper-button-next"></button>
           </div>
-          <div class="swiper-pagination"></div>
-        </div>
-        <div class="product-item__body">
-          <div class="product-item__title subtitle-mob">ПАРФЮМЕРНАЯ ВОДА</div>
-          <div class="product-item__subtitle title-mob">BON PARFUMEUR PARIS 602 – poivre, cèdre, patchouli</div>
-          <div class="product-item__options">
-            <div class="product-item__item">
-              <input id="50ml" class="product-item__input" checked type="radio" value="50" name="option">
-              <label for="50ml" class="product-item__label"><span class="product-item__text title-mob ">50 МЛ</span></label>
+          <div class="product-item__body">
+            <div class="product-item__title subtitle-mob">ПАРФЮМЕРНАЯ ВОДА</div>
+            <div class="product-item__subtitle title-mob">BON PARFUMEUR PARIS 602 – poivre, cèdre, patchouli</div>
+            <div class="product-item__options">
+              <div class="product-item__item">
+                <input id="50ml" class="product-item__input" checked type="radio" value="50" name="option">
+                <label for="50ml" class="product-item__label"><span class="product-item__text title-mob ">50 МЛ</span></label>
+              </div>
+              <div class="product-item__item">
+                <input id="100ml" class="product-item__input" type="radio" value="100" name="option">
+                <label for="100ml" class="product-item__label"><span class="product-item__text title-mob ">100 МЛ</span></label>
+              </div>
+              <div class="product-item__item">
+                <input id="250ml" class="product-item__input" type="radio" value="250" name="option">
+                <label for="250ml" class="product-item__label"><span class="product-item__text title-mob ">250 МЛ</span></label>
+              </div>
             </div>
-            <div class="product-item__item">
-              <input id="100ml" class="product-item__input" type="radio" value="100" name="option">
-              <label for="100ml" class="product-item__label"><span class="product-item__text title-mob ">100 МЛ</span></label>
+            <div class="product-item__add">
+              <div data-da=".product-item__bottom,768,1" class="product-item__price">
+                <div class="product-item__price-new">2990 ₽</div>
+                <div class="product-item__price-old">5500 ₽</div>
+              </div>
+              <button data-da=".product-item__bottom,768,2" class="product-item__btn btn">ДОБАВИТЬ</button>
             </div>
-            <div class="product-item__item">
-              <input id="250ml" class="product-item__input" type="radio" value="250" name="option">
-              <label for="250ml" class="product-item__label"><span class="product-item__text title-mob ">250 МЛ</span></label>
+            <div class="product-item__about">
+              <p class="product-item__main-text subtitle-mob">Больше никаких морщинок! 🔥Платина и экстракт черной икры легко справятся с ними 👌🏻</p>
+              <p class="product-item__main-text subtitle-mob">Омолаживающий крем для век от Ottie мгновенно заполняет и разглаживает морщинки, осветляет темные круги под глазами, тонизирует и интенсивно увлажняет чувствительную кожу век 😍</p>
+              <p class="product-item__main-text subtitle-mob">Крем оснащен уникальным аппликатором-массажером с тремя роликовыми шариками 💥 С его помощью можно легко и гигиенично нанести средство на кожу, не растягивая и не травмируя ее 😉
+              </p>
+              <p class="product-item__main-text subtitle-mob">Массажер усиливает микроциркуляцию крови, расслабляет и дарит легкий охлаждающий эффект – благодаря этому активные компоненты проникают в глубокие слои эпидермиса</p>
+              <a href="https://canna.shop" class="product-item__link">https://canna.shop</a>
             </div>
-          </div>
-          <div class="product-item__about">
-            <p class="product-item__main-text subtitle-mob">Больше никаких морщинок! 🔥Платина и экстракт черной икры легко справятся с ними 👌🏻</p>
-            <p class="product-item__main-text subtitle-mob">Омолаживающий крем для век от Ottie мгновенно заполняет и разглаживает морщинки, осветляет темные круги под глазами, тонизирует и интенсивно увлажняет чувствительную кожу век 😍</p>
-            <p class="product-item__main-text subtitle-mob">Крем оснащен уникальным аппликатором-массажером с тремя роликовыми шариками 💥 С его помощью можно легко и гигиенично нанести средство на кожу, не растягивая и не травмируя ее 😉
-            </p>
-            <p class="product-item__main-text subtitle-mob">Массажер усиливает микроциркуляцию крови, расслабляет и дарит легкий охлаждающий эффект – благодаря этому активные компоненты проникают в глубокие слои эпидермиса</p>
-            <a href="https://canna.shop" class="product-item__link">https://canna.shop</a>
           </div>
         </div>
       </div>
-      <div class="product-item__bottom">
-        <div class="product-item__price">
-          <div class="product-item__price-new">2990 ₽</div>
-          <div class="product-item__price-old">5500 ₽</div>
-        </div>
-        <button class="product-item__btn btn">ДОБАВИТЬ</button>
-      </div>
+      <div class="product-item__bottom"></div>
     </div>
 
     <div class="cart side-common">
@@ -625,5 +679,6 @@
   <script src="assets/js/swiper-bundle.min.js"></script>
   <script src="assets/js/libs.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/adapt.js"></script>
 </body>
 </html>

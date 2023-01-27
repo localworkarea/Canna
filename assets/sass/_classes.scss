@@ -214,3 +214,16 @@ textarea {
 		border-left:unset;
 	}
 }
+
+.lock {
+	@media (max-width: 767px) {
+		overflow: hidden;
+		touch-action: none;
+		overscroll-behavior: none;
+	}
+	&.item-show {
+			overflow: hidden;
+			touch-action: none;
+			overscroll-behavior: none;
+	}
+}
